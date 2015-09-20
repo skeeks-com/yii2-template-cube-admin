@@ -1,0 +1,142 @@
+/* PROJECT BOX */
+.project-box {
+	.main-box-body {
+		padding: 0;
+	}
+	.project-box-header {
+		@include border-radius($border-radius-base $border-radius-base 0 0);
+	
+		.name {
+			a {
+				color: #fff;
+			    display: block;
+			    font-size: 1.4em;
+			    font-weight: 300;
+			    padding: 16px 15px;
+			    @include border-radius($border-radius-base $border-radius-base 0 0);
+				@include transition(background-color 0.1s ease-in-out 0s);
+			
+				&:hover {
+					text-decoration: none;
+				}
+			}
+		}
+		&.green-bg .name a:hover {
+			background: $green-color-dark;
+		}
+	}
+	.project-box-content {
+		padding: 30px 20px 5px;
+		text-align: center;
+	
+		.chart {
+			position: relative;
+			text-align: center;
+			font-weight: 300;
+			font-size: 1em;
+			width: 130px;
+			height: 130px;
+			display: block;
+			margin: 0 auto;
+			padding-top: 37px;
+		}
+		.chart canvas {
+			position: absolute;
+			top: 0;
+			left: 0;
+		}
+		.chart .percent {
+			font-size: 2.1em;
+			font-weight: 600;
+		}
+		.chart .lbl {
+			display: block;
+		    font-size: 0.875em;
+		    margin-top: -7px;
+		}
+	}
+	.project-box-footer {
+		@include border-radius(0 0 $border-radius-base $border-radius-base);
+	
+		a {
+			border-right: 1px solid #eee;
+		    color: $text-color;
+		    display: block;
+		    float: left;
+		    margin: 20px 0;
+		    padding: 5px 10px;
+		    text-align: center;
+		    width: 33.33%;
+	
+			&:last-child {
+				border: none;
+			}
+			&:hover {
+				text-decoration: none;
+			}
+		}
+	
+		.value {
+			display: block;
+			font-size: 1.8em;
+			font-weight: 300;
+		}
+		.label {
+			display: block;
+			font-size: 0.875em;
+			font-weight: 300;
+			color: $text-color;
+		}
+	}
+	.project-box-ultrafooter {
+		background: #f7fafa;
+		border-top: 1px solid #e9eef0;
+	    padding: 8px 15px;
+	    @include border-radius(0 0 $border-radius-base $border-radius-base);
+	
+		.project-img-owner {
+			@include border-radius(50%);
+		    display: block;
+		    float: left;
+		    height: 33px;
+		    margin-right: 5px;
+		    overflow: hidden;
+		    width: 33px;
+		}
+		.link {
+			margin-top: 6px;
+			color: #c1c5c6;
+		}
+	}
+
+	&.emerald-box {
+		.project-box-footer a:hover {
+			color: $primary-color;
+		}
+	}
+	&.red-box {
+		.project-box-footer a:hover {
+			color: $red-color;
+		}
+	}
+	&.yellow-box {
+		.project-box-footer a:hover {
+			color: $yellow-color;
+		}
+	}
+	&.green-box {
+		.project-box-footer a:hover {
+			color: $green-color;
+		}
+	}
+	&.purple-box {
+		.project-box-footer a:hover {
+			color: $purple-color;
+		}
+	}
+	&.gray-box {
+		.project-box-footer a:hover {
+			color: $gray-color;
+		}
+	}
+}

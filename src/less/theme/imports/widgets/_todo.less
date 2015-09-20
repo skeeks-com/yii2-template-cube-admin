@@ -1,0 +1,49 @@
+/* RECENT - TODO */
+.widget-todo {
+	list-style: none;
+	margin: 0;
+	padding: 0;
+
+	> li {
+		border-bottom: 2px solid #ebebeb;
+		padding: 10px 5px;
+	
+		&:hover {
+			background-color: @default-bg-hover-color;
+		}
+		input:checked + label {
+			text-decoration: line-through;
+		}
+	}
+	.name {
+		float: left;
+	
+		span.label {
+			margin-left: 5px;
+		}
+	}
+	.actions {
+		float: right;
+		padding-right: 5px;
+		padding-top: 2px;
+	
+		> a {
+			margin: 0 2px;
+			color: #707070;
+		
+			&.badge {
+				color: #fff;
+			}
+			&:hover {
+				text-decoration: none;
+				color: @primary-color;
+			}
+			&.badge:hover {
+				background-color: #fff;
+			}
+			> i {
+				font-size: 1.125em;
+			}
+		}
+	}
+}

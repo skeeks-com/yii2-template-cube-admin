@@ -1,0 +1,150 @@
+<div class="row">
+	<div class="col-lg-12">
+		<ol class="breadcrumb">
+			<li><a href="">Home</a></li>
+			<li><a href=""><span>Graphs</span></a></li>
+			<li class="active"><span>Dygraphs Charts</span></li>
+		</ol>
+		
+		<h1>Dygraphs Charts</h1>
+	</div>
+</div>
+
+<div class="row">
+	<div class="col-lg-12">
+		<div class="main-box">
+			<header class="main-box-header clearfix">
+				<h2>Demo of the Range Selector with no roll period.</h2>
+			</header>
+			
+			<div class="main-box-body clearfix">
+				<div id="noroll" class="dygraph" style="width:100%; height:300px;"></div>
+			</div>
+		</div>
+	</div>
+</div>
+
+<div class="row">
+	<div class="col-lg-12">
+		<div class="main-box">
+			<header class="main-box-header clearfix">
+				<h2>Roll period of 14 timesteps, custom range selector height and plot color.</h2>
+			</header>
+			
+			<div class="main-box-body clearfix">
+				<div id="roll14" class="dygraph" style="width:100%; height:300px;"></div>
+			</div>
+		</div>
+	</div>
+</div>
+
+<div class="row">
+	<div class="col-lg-12">
+		<div class="main-box">
+			<header class="main-box-header clearfix">
+				<h2>Stock Chart Demo</h2>
+			</header>
+			
+			<div class="main-box-body clearfix">
+				<div id="stock_div" class="dygraph" style="width: 100%; height: 300px;"></div>
+				<br/>
+				<div style="width: 100%; text-align: center;">
+				  <button class="btn btn-primary" id="linear">Linear Scale</button>&nbsp;
+				  <button class="btn btn-primary" id="log" disabled="true">Log Scale</button>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+
+<div class="row">
+	<div class="col-lg-12">
+		<div class="main-box">
+			<header class="main-box-header clearfix">
+				<h2>Custom interaction model</h2>
+			</header>
+			
+			<div class="main-box-body clearfix">
+				<div style="width:100%;">
+					<button class="btn btn-primary" id="restore3">Restore position</button>
+					<br/><br/>
+					<div id="div_g3" class="dygraph" style="width:100%; height:300px;"></div>
+					
+					<br/><br/>
+					<div class="alert alert-info">
+						Zoom in: double-click, scroll wheel<br>
+						Zoom out: ctrl-double-click, scroll wheel<br>
+						Standard Zoom: shift-click-drag
+						Standard Pan: click-drag<br>
+						Restore zoom level: press button<br>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+	
+<!-- this page specific inline scripts -->
+<script>
+$(function() {
+	g1 = new Dygraph(
+		document.getElementById("noroll"),
+		data_temp,
+		{
+			customBars: true,
+			title: 'Daily Temperatures in New York vs. San Francisco',
+			ylabel: 'Temperature (F)',
+			legend: 'always',
+			labelsDivStyles: { 'textAlign': 'right' },
+			showRangeSelector: true
+		}
+	);
+	
+	g2 = new Dygraph(
+		document.getElementById("roll14"),
+		data_temp,
+		{
+			rollPeriod: 14,
+			showRoller: true,
+			customBars: true,
+			title: 'Daily Temperatures in New York vs. San Francisco',
+			ylabel: 'Temperature (F)',
+			legend: 'always',
+			labelsDivStyles: { 'textAlign': 'right' },
+			showRangeSelector: true,
+			rangeSelectorHeight: 30,
+			rangeSelectorPlotStrokeColor: 'yellow',
+			rangeSelectorPlotFillColor: 'lightyellow'
+		}
+	);
+	
+	var g = new Dygraph(document.getElementById("stock_div"), stockData, {
+		customBars: true,
+		logscale: true
+	});
+	
+	
+	var linear = document.getElementById("linear");
+	var log = document.getElementById("log");
+	linear.onclick = function() { setLog(false); }
+	log.onclick = function() { setLog(true); }
+	var setLog = function(val) {
+		g.updateOptions({ logscale: val });
+		linear.disabled = !val;
+		log.disabled = val;
+	}
+	
+	var g3 = new Dygraph(document.getElementById("div_g3"),
+		NoisyData, { errorBars : true, interactionModel : {
+			'mousedown' : downV3,
+			'mousemove' : moveV3,
+			'mouseup' : upV3,
+			'click' : clickV3,
+			'dblclick' : dblClickV3,
+			'mousewheel' : scrollV3
+	}});
+	document.getElementById("restore3").onclick = function() {
+		restorePositioning(g3);
+	}
+});
+</script>

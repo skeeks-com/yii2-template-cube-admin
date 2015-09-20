@@ -1,0 +1,85 @@
+<div class="row">
+	<div class="col-lg-12">
+		<ol class="breadcrumb">
+			<li><a href="">Home</a></li>
+			<li class="active"><span>Intro</span></li>
+		</ol>
+		
+		<h1>Intro</h1>
+	</div>
+</div>
+
+<div class="row">
+	<div class="col-lg-12">
+		<div class="main-box clearfix">
+			<header class="main-box-header clearfix">
+				<h2>Box Header</h2>
+			</header>
+			
+			<div class="main-box-body clearfix">
+				Content...
+			</div>
+		</div>
+	</div>
+</div>
+	
+<!-- this page specific inline scripts -->
+<script>
+$(document).ready(function() {
+	var placementRight = 'right';
+	var placementLeft = 'left';
+	
+	if ($('body').hasClass('rtl')) {
+		placementRight = 'left';
+		placementLeft = 'right';
+	}
+	
+	// Define the tour!
+	var tour = {
+		id: "Cube-intro",
+		steps: [
+			{
+				target: "user-left-box",
+				title: "Current online user",
+				content: "You can find here status of user who's currently online.",
+				placement: placementRight,
+				yOffset: 10
+			},
+			{
+				target: 'make-small-nav',
+				title: "Small navigation button",
+				content: "Click on the button and make sidebar navigation small.",
+				placement: "bottom",
+				zindex: 999,
+				xOffset: -8
+			},
+			{
+				target: 'profile-dropdown',
+				title: "User settings",
+				content: "You can edit you profile info here.",
+				placement: placementLeft,
+				zindex: 999
+			},
+			{
+				target: 'config-tool-options',
+				title: "Configuration tools",
+				content: "Here you can change theme skins and other features.",
+				placement: placementLeft,
+				zindex: 999,
+				fixedElement: true,
+				xOffset: -55
+			},
+			{
+				target: 'sidebar-nav',
+				title: "Sidebar navigation",
+				content: "All template files are here.",
+				placement: placementRight
+			}
+		],
+		showPrevButton: true
+	};
+
+	// Start the tour!
+	hopscotch.startTour(tour);
+});
+</script>

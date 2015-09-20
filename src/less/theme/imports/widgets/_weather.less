@@ -1,0 +1,124 @@
+.weather-box {
+	.main-box-body {
+		padding: 0;
+	}
+
+	.current {
+		text-align: center;
+		padding-bottom: 40px;
+		padding-top: 36px;
+
+		.icon {
+			display: block;
+			float: left;
+		}
+		.temp-wrapper {
+			float: left;
+			margin-left: 20px;
+
+			.temperature {
+				font-size: 3.6em;
+				font-weight: 300;
+				margin-top: -5px;
+				text-align: left;
+
+				.sign {
+					
+				}
+			}
+			.desc {
+				margin-top: -4px;
+				text-align: left;
+			}
+		}
+	}
+
+	.next {
+		background: #03a9f4;
+		.border-radius(0 0 @border-radius-base @border-radius-base);
+		color: #fff;
+		padding: 20px;
+
+		ul {
+			list-style: none;
+			margin: 0;
+			padding: 0;
+
+			li {
+				float: left;
+				width: 20%;
+				text-align: center;
+			}
+		}
+		.day {
+			font-size: 1em;
+			text-transform: uppercase;
+		}
+		.icon {
+			font-size: 2em;
+		}
+		.temperature {
+			font-size: 1.4em;
+
+			.sign {
+
+			}
+		}
+	}
+}
+
+.weather-box-large {
+	.main-box-body {
+		padding: 0;
+	}
+
+	.current {
+		background: url(../../img/samples/new-york-sunset.jpg) no-repeat;
+		background-size: cover;
+		.border-radius(@border-radius-base);
+		min-height: 340px;
+		color: #fff;
+		padding: 20px 30px;
+
+		h4 {
+			margin-bottom: 30px;
+		}
+		.place {
+			font-size: 1.2em;
+			text-transform: uppercase;
+			font-weight: 600;
+
+			> i {
+				margin-right: 5px;
+			}
+		}
+		.temp-out-wrapper {
+			margin-top: 20px;
+		}
+		.icon {
+			display: block;
+			float: left;
+			font-size: 6em;
+		}
+		.temp-wrapper {
+			float: left;
+			margin-left: 30px;
+
+			.temperature {
+				font-size: 3.6em;
+				font-weight: 300;
+				margin-top: -5px;
+				text-align: left;
+
+				.sign {
+					
+				}
+			}
+			.desc {
+				margin-top: -4px;
+				text-align: left;
+				font-weight: 600;
+			}
+		}
+	}
+}

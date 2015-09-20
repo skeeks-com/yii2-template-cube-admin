@@ -1,0 +1,75 @@
+Searching 135 files for "!default" (regex)
+
+/Applications/MAMP/htdocs/ikoma3/less/theme/imports/_variables.less:
+   55  @font-hx-weight: 300;
+   56  
+   57: @line-height-base: 1.428571429 !default;
+   58  
+   59  @heading-font-family: @font-stack;
+   ..
+   85  
+   86  //OTHER
+   87: @border-radius-base: 3px !default;
+   88: @border-radius-large: 6px !default;
+   89: @border-radius-small: 2px !default;
+   90  
+
+4 matches in 1 file
+
+
+Searching 135 files for "keyframes" (regex)
+
+/Applications/MAMP/htdocs/ikoma3/less/bootstrap/css/bootstrap.css:
+ 4736    color: #843534;
+ 4737  }
+ 4738: @-webkit-keyframes progress-bar-stripes {
+ 4739    from {
+ 4740      background-position: 40px 0;
+ ....
+ 4744    }
+ 4745  }
+ 4746: @keyframes progress-bar-stripes {
+ 4747    from {
+ 4748      background-position: 40px 0;
+
+/Applications/MAMP/htdocs/ikoma3/less/bootstrap/less/progress-bars.less:
+    8  
+    9  // WebKit
+   10: @-webkit-keyframes progress-bar-stripes {
+   11    from  { background-position: 40px 0; }
+   12    to    { background-position: 0 0; }
+   ..
+   14  
+   15  // Spec and IE10+
+   16: @keyframes progress-bar-stripes {
+   17    from  { background-position: 40px 0; }
+   18    to    { background-position: 0 0; }
+
+/Applications/MAMP/htdocs/ikoma3/less/theme/imports/_demo.less:
+   40  	-webkit-animation: rotating 2s linear infinite; */
+   41  }
+   42: .keyframes(rotating) {
+   43  	from {
+   44  		transform: rotate(0deg);
+
+/Applications/MAMP/htdocs/ikoma3/less/theme/imports/_mixins.less:
+   22  }
+   23  
+   24: .keyframes(@animation-name) {
+   25: 	@-webkit-keyframes #{@animation-name} {
+   26  		@content;
+   27  	}
+   28: 	@-moz-keyframes #{@animation-name} {
+   29  		@content;
+   30  	}  
+   31: 	@-ms-keyframes #{@animation-name} {
+   32  		@content;
+   33  	}
+   34: 	@-o-keyframes #{@animation-name} {
+   35  		@content;
+   36  	}  
+   37: 	@keyframes #{@animation-name} {
+   38  		@content;
+   39  	}
+
+11 matches across 4 files

@@ -1,0 +1,96 @@
+/* CONFIG TOOLS */
+#config-tool {
+	position: fixed;
+	right: 0;
+	top: 120px;
+	width: 200px;
+	z-index: 1000;
+	@include transition(all 0.2s ease-in-out 0s);
+}
+#config-tool #config-tool-cog {
+	background: #fff;
+	@include border-radius($border-radius-base 0 0 $border-radius-base);
+	box-shadow: -3px 3px 3px -2px rgba(0, 0, 0, 0.1);
+	cursor: pointer;
+	left: -50px;
+	padding: 10px;
+	position: absolute;
+	text-align: center;
+	width: 50px;
+	@include transition(all 0.1s ease-in-out 0s);
+	top: 0;
+}
+#config-tool.closed #config-tool-cog i {
+	/* -webkit-transform: rotate(-135deg);
+	-moz-transform: rotate(-135deg);
+	-o-transform: rotate(-135deg);
+	-ms-transform: rotate(-135deg);
+	transform: rotate(-135deg); */
+	@include animation(rotating 3s linear infinite);
+}
+#config-tool.closed #config-tool-cog:hover {
+	background-color: $primary-color;
+	color: #fff;
+} 
+#config-tool #config-tool-cog i {
+	font-size: 2.2em;
+	/* -webkit-transition: -webkit-transform 1.1s ease-in-out 0.1s;
+	-moz-transition: -moz-transform 1.1s ease-in-out 0.1s;
+	transition: transform 1.1s ease-in-out 0.1s;
+	-webkit-animation: rotating 2s linear infinite; */
+}
+@include keyframes(rotating) {
+	from {
+		transform: rotate(0deg);
+	}
+	to {
+		transform: rotate(360deg);
+	}
+}
+#config-tool #config-tool-options {
+	background: #fff;
+	box-shadow: -3px 3px 3px -2px rgba(0, 0, 0, 0.1);
+	padding: 15px;
+}
+#config-tool #config-tool-options h4 {
+	margin: 0;
+	font-size: 1.3em;
+}
+#config-tool #config-tool-options ul {
+	list-style: none;
+	padding: 15px 0 0;
+	margin: 0;
+}
+#config-tool #config-tool-options ul li {
+	padding: 4px 0;
+}
+#config-tool #config-tool-options ul li .checkbox {
+	margin: 0;
+}
+#config-tool.closed {
+	right: -200px;
+}
+#config-tool.opened {
+	right: 0;
+}
+#config-tool #skin-colors li {
+	display: block;
+	float: left;
+	padding: 3px !important;
+}
+#config-tool #skin-colors li a.skin-changer {
+	background: $primary-color;
+	display: block;
+	height: 30px;
+	width: 30px;
+	cursor: pointer;
+}
+#config-tool #skin-colors li a.skin-changer:hover {
+	
+}
+#config-tool #skin-colors li:nth-child(5) {
+	clear: left;
+}
+#config-tool #skin-colors li a.skin-changer.active {
+	border: 2px solid #ff0000;
+}

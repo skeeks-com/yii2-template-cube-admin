@@ -1,0 +1,144 @@
+/* INVOICE */
+#invoice-companies {
+	border: 1px solid $main-bg-color;
+	border-left: 0;
+	border-right: 0;
+	margin: 20px -20px;
+
+	@media (max-width: $break-xxs-max) {
+		margin-left: -10px;
+		margin-right: -10px;
+	}
+
+	.invoice-box {
+		border-right: 1px solid $main-bg-color;
+		padding: 25px 20px;
+		height: 100%;
+		min-height: 165px;
+
+		@media only screen and (max-width: $break-xs-max) {
+			border-bottom: 1px solid $main-bg-color;
+			border-right: 0;
+			border-left: 0;
+		}
+
+		&.invoice-box-dates {
+			border-right: 0;
+
+			@media only screen and (max-width: $break-xs-max) {
+				border-bottom: 0;
+			}
+		}
+	}
+	.invoice-icon {
+		float: left;
+		margin-right: 20px;
+		margin-top: 20px;
+		color: $main-bg-color;
+		text-align: center;
+	
+		> i {
+			font-size: 2.4em;
+			display: block;
+		}
+	}
+	.invoice-company {
+		float: left;
+	
+		h4 {
+			font-size: 1.4em;
+		}
+	}
+	.invoice-dates {
+		@media only screen and (min-width: $break-xs-min) and (max-width: $break-sm-max) {
+			padding-top: 15px;
+		}
+	
+		.invoice-date {
+			> strong {
+				text-transform: uppercase;
+				line-height: 28px;
+
+				@media only screen and (min-width: $break-xs-min) and (max-width: $break-sm-max) {
+					font-size: 0.875em;
+					line-height: 22px;
+				}
+			}
+			> span {
+				font-size: 1.3em;
+
+				@media only screen and (min-width: $break-xs-min) and (max-width: $break-sm-max) {
+					font-size: 1.1em;
+				}
+			}
+			&.invoice-due-date > span {
+				font-weight: bold;
+			}
+		}
+		.invoice-number {
+			> strong {
+				text-transform: uppercase;
+				line-height: 48px;
+
+				@media only screen and (min-width: $break-xs-min) and (max-width: $break-sm-max) {
+					font-size: 0.875em;
+					line-height: 33px;
+				}
+			}
+			> span {
+				color: $primary-color;
+				font-size: 1.9em;
+
+				@media only screen and (min-width: $break-xs-min) and (max-width: $break-sm-max) {
+					font-size: 1.4em;
+				}
+			}
+		}
+	}
+}
+
+.invoice-box-total {
+	line-height: 1.8;
+	border: 1px solid $main-bg-color;
+	border-right: 0;
+	border-left: 0;
+	padding: 20px 0;
+
+	.invoice-box-total-label {
+		font-size: 1.125em;
+	}
+	.invoice-box-total-value {
+		font-size: 1.125em;
+	}
+	.grand-total {
+		font-size: 1.25em;
+		text-transform: uppercase;
+		font-weight: bold;
+	}
+}
+
+.invoice-summary {
+	padding-top: 30px;
+	padding-bottom: 30px;
+	margin-left: -3px;
+	margin-right: -3px;
+
+	> div {
+		padding-left: 3px;
+		padding-right: 3px;
+	}
+	.invoice-summary-item {
+		background: #dceffc;
+		text-align: center;
+		padding: 10px 0;
+		margin-top: 3px;
+		margin-bottom: 3px; 
+	
+		> span {
+			font-size: 0.75em;
+		}
+		> div {
+			font-size: 1.125em;
+		}
+	}
+}

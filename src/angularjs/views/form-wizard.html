@@ -1,0 +1,140 @@
+<div class="row">
+	<div class="col-lg-12">
+		<ol class="breadcrumb">
+			<li><a href="">Home</a></li>
+			<li class="active"><span>Form wizard</span></li>
+		</ol>
+		
+		<h1>Form wizard</h1>
+	</div>
+</div>
+
+<div class="row">
+	<div class="col-lg-12">
+		<div class="main-box clearfix" style="min-height: 820px;">
+			<header class="main-box-header clearfix">
+				<h2>Try the demo wizard bellow</h2>
+			</header>
+			
+			<div class="main-box-body clearfix">
+			
+				<div id="myWizard" class="wizard">
+					<div class="wizard-inner">
+						<ul class="steps">
+							<li data-target="#step1" class="active"><span class="badge badge-primary">1</span>Step 1<span class="chevron"></span></li>
+							<li data-target="#step2"><span class="badge">2</span>Step 2<span class="chevron"></span></li>
+							<li data-target="#step3"><span class="badge">3</span>Step 3<span class="chevron"></span></li>
+							<li data-target="#step4"><span class="badge">4</span>Step 4<span class="chevron"></span></li>
+						</ul>
+						<div class="actions">
+							<button type="button" class="btn btn-default btn-mini btn-prev"> <i class="icon-arrow-left"></i>Prev</button>
+							<button type="button" class="btn btn-success btn-mini btn-next" data-last="Finish">Next<i class="icon-arrow-right"></i></button>
+						</div>
+					</div>
+					<div class="step-content">
+						<div class="step-pane active" id="step1">
+							<br/>
+							<h4>This is step 1</h4>
+							<div class="form-group has-success">
+								<label class="control-label" for="inputSuccess">Input with success</label>
+								<input type="text" class="form-control" id="inputSuccess">
+								<span class="help-block"><i class="icon-ok-sign"></i> Success message</span>
+							</div>
+							<div class="form-group has-warning">
+								<label class="control-label" for="inputWarning">Input with warning</label>
+								<input type="text" class="form-control" id="inputWarning">
+								<span class="help-block"><i class="icon-warning-sign"></i> Warning message</span>
+							</div>
+							<div class="form-group has-error">
+								<label class="control-label" for="inputError">Input with error</label>
+								<input type="text" class="form-control" id="inputError">
+								<span class="help-block"><i class="icon-remove-sign"></i> Error message</span>
+							</div>
+						</div>
+						
+						<div class="step-pane" id="step2">
+							<br/>
+							<h4>This is step 2</h4>
+							<div class="alert alert-success fade in">
+								<button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
+								<i class="fa fa-check-circle fa-fw fa-lg"></i>
+								<strong>Well done!</strong> You successfully read this important alert message.
+							</div>
+							<div class="alert alert-info fade in">
+								<button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
+								<i class="fa fa-info-circle fa-fw fa-lg"></i>
+								<strong>Heads up!</strong> This alert needs your attention, but it's not super important.
+							</div>
+							<div class="alert alert-warning fade in">
+								<button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
+								<i class="fa fa-warning fa-fw fa-lg"></i>
+								<strong>Warning!</strong> Best check yo self, you're not looking too good.
+							</div>
+							<div class="alert alert-danger fade in">
+								<button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
+								<i class="fa fa-times-circle fa-fw fa-lg"></i>
+								<strong>Oh snap!</strong> Change a few things up and <a href="" class="alert-link">try submitting again</a>.
+							</div>
+						</div>
+						<div class="step-pane" id="step3">
+							<br/>
+							<h4>This is step 3</h4>
+							
+							<div class="form-group">
+								<label for="maskedDate">Date</label>
+								<div class="input-group">
+									<span class="input-group-addon"><i class="fa fa-calendar"></i></span>
+									<input type="text" class="form-control" id="maskedDate">
+								</div>
+								<span class="help-block">ex. 99/99/9999</span>
+							</div>
+						
+							<div class="form-group">
+								<label for="maskedPhone">Phone</label>
+								<div class="input-group">
+									<span class="input-group-addon"><i class="fa fa-phone"></i></span>
+									<input type="text" class="form-control" id="maskedPhone">
+								</div>
+								<span class="help-block">ex. (999) 999-9999</span>
+							</div>
+							
+							<div class="form-group">
+								<label for="maskedPhoneExt">Phone + Ext</label>
+								<div class="input-group">
+									<span class="input-group-addon"><i class="fa fa-mobile-phone"></i></span>
+									<input type="text" class="form-control" id="maskedPhoneExt">
+								</div>
+								<span class="help-block">ex. (999) 999-9999? x99999</span>
+							</div>
+						</div>
+						<div class="step-pane" id="step4">
+							<br/>
+							<h4>This is step 4</h4>
+							
+							<div class="alert alert-success fade in" style="margin: 100px 0;">
+								<i class="fa fa-check-circle fa-fw fa-lg"></i>
+								<strong>Congratulation!</strong> You have successfully finished our nice wizard.
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			
+		</div>
+	</div>
+</div>
+	
+	<script src="../js/wizard.js"></script>
+	<script src="../js/jquery.maskedinput.min.js"></script>
+
+<!-- this page specific inline scripts -->
+<script>
+$(function () {
+	$('#myWizard').wizard();
+	
+	//masked inputs
+	$("#maskedDate").mask("99/99/9999");
+	$("#maskedPhone").mask("(999) 999-9999");
+	$("#maskedPhoneExt").mask("(999) 999-9999? x99999");
+});
+</script>

@@ -1,0 +1,44 @@
+/* RECENT - USERS */
+.widget-users {
+	list-style: none;
+	margin: 0;
+	padding: 0;
+
+	li {
+		border-bottom: 2px solid #ebebeb;
+		padding: 15px 0;
+		height: 96px;
+	
+		> .img {
+			float: left;
+			margin-top: 8px;
+			width: 50px;
+			height: 50px;
+			overflow: hidden;
+			@include border-radius(50%);
+		}
+		> .details {
+			margin-left: 60px;
+		
+			> .name {
+				font-weight: 600;
+			
+				> a {
+					color: $text-color;
+				}
+				> a:hover {
+					color: $primary-color;
+				}
+			}
+			> .time {
+				color: $primary-color;
+				font-size: 0.75em;
+				padding-bottom: 7px;
+			
+				&.online {
+					color: $green-color;
+				}
+			}
+		}
+	}
+}

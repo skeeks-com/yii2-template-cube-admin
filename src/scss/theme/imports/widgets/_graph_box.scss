@@ -1,0 +1,155 @@
+/* GRAPH BOX */
+.graph-box {
+	padding: 15px 15px;
+	@include border-radius($border-radius-base 0 0 $border-radius-base);
+
+	h2 {
+		color: #fff;
+		font-size: 1.6em;
+		font-weight: 300;
+		margin-bottom: 10px;
+		margin-left: 10px;
+	}
+	.graph {
+		.morris-hover.morris-default-style {
+			background: #000;
+			background: rgba(0, 0, 0, 0.8);
+			border: none;
+			@include border-radius($border-radius-large);
+			color: #999;
+		}
+	}
+}
+.graph-nice-legend {
+	padding-left: 15px;
+	padding-top: 65px;
+
+	@media (max-width: $break-md-max) {
+		padding-left: 0;
+	}
+	@media (max-width: $break-sm-max) {
+		padding-top: 10px;
+		padding-bottom: 10px;
+		padding-left: 0;
+	}
+
+	.graph-legend-row {
+		padding-top: 10px;
+		padding-bottom: 10px;
+	}
+	.graph-legend-name {
+		display: block;
+		font-size: 1.2em;
+		font-weight: 300;
+	}
+	.graph-legend-value {
+		display: block;
+		font-size: 2.1em;
+		font-weight: 600;
+		/* color: $primary-color; */
+	}
+	.graph-legend-row-inner {
+		@media (max-width: $break-sm-max) {
+			padding: 0 20px;
+		}
+	}
+}
+
+/* SMALL GRAPH BOX */
+.small-graph-box {
+	padding: 20px;
+	color: #fff;
+	border: 0 !important;
+	
+	.headline {
+		display: block;
+		font-size: 0.875em;
+		font-weight: 400;
+		margin-top: -5px;
+		padding-bottom: 5px;
+		text-transform: uppercase;
+	}
+	.value {
+		display: block;
+		font-size: 1.9em;
+		font-weight: 600;
+		margin-top: -5px;
+	}
+	.progress {
+		background: rgba(0, 0, 0, 0.2);
+		height: 5px;
+		margin-bottom: 5px;
+		margin-top: 10px;
+	
+		.progress-bar {
+			background-color: #fff;
+		}
+	}
+	.subinfo {
+		display: block;
+		font-size: 0.8em;
+		padding-top: 5px;
+	
+		i {
+			font-size: 1.2em;
+		}
+	}
+}
+
+/* CHART SMALL */
+.dashboard-stats {
+	margin: 20px -20px -20px;
+
+	@media (max-width: $break-xxs-max) {
+		margin-left: -10px;
+		margin-right: -10px;
+		margin-bottom: -12px;
+	}
+}
+.chart-small {
+	border-top: 1px solid #e1e1e1;
+	border-right: 1px solid #e1e1e1;
+	outline: none;
+	padding: 15px 0;
+	display: block;
+	text-decoration: none;
+	color: $text-color;
+	@include transition(background-color 0.1s ease-in-out 0s);
+
+	&:last-child,
+	&.last {
+		border-right: 0;
+	}
+	&:nth-child(2) {
+		@media (max-width: $break-xs-max) {
+			border-right: 0;
+		}
+	}
+	&:hover {
+		background-color: #f9f9f9;
+		text-decoration: none;
+		color: $text-color;
+	}
+	.headline {
+		font-weight: 600;
+		font-size: 0.75em;
+		padding: 0 20px;
+		margin-bottom: -5px;
+	}
+	.value {
+		font-weight: 600;
+		font-size: 1.9em;
+		padding: 0 20px;
+
+		@media (max-width: $break-xxs-max) {
+			font-size: 1.6em;
+		}
+	}
+}
+.chart-small-content {
+	max-height: 100px;
+	height: 50px; 
+	padding: 0px; 
+	margin: 20px 20px 0; 
+	position: relative;
+}

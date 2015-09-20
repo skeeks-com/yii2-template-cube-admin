@@ -1,0 +1,540 @@
+/* FORMS */
+.form-group {
+	margin-bottom: 20px;
+}
+label {
+	font-weight: 400;
+	font-size: 0.875em;
+}
+.form-control {
+	@include border-radius($border-radius-base);
+	border-color: $main-bg-color;
+	border-width: 2px;
+	box-shadow: none;
+	font-size: 13px;
+
+	&:focus {
+		border-color: rgba(52, 151, 219, 0.6);
+		outline: 0;
+		box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 8px rgba(52, 152, 219, 0.6);
+	}
+}
+.form-inline-box {
+	background: none repeat scroll 0 0 #F6F6F6;
+	border: 2px solid $main-bg-color;
+	padding: 7px;
+}
+
+.radio {
+	padding-left: 2px;
+
+	label {
+		display: inline-block;
+		cursor: pointer;
+		position: relative;
+		padding-left: 30px;
+		padding-right: 10px;
+		padding-bottom: 5px;
+	}
+}
+input[type="radio"] {
+	line-height: normal;
+	@include box-sizing(border-box);
+}
+.radio input[type=radio], 
+.radio-inline input[type=radio] {
+	float: left;
+	margin-left: -20px;
+}
+.radio input[type=radio] {
+	display: none;
+}
+.radio label:before {
+	background: none repeat scroll 0 0 #ffffff;
+	border: 2px solid $main-bg-color;
+	@include border-radius(50%);
+	content: "";
+	display: inline-block;
+	height: 20px;
+	left: 0;
+	margin-right: 10px;
+	position: absolute;
+	width: 20px;
+}
+.radio label:after {
+	background-color: $primary-color;
+	border: 1px solid $primary-color;
+	@include border-radius(50%);
+	content: "";
+	display: inline-block;
+	font-size: 13px;
+	height: 16px;
+	left: 2px;
+	position: absolute;
+	text-align: center;
+	top: 2px;
+	transform: scale(0);
+	width: 16px;
+}
+.radio input[type=radio]:checked + label:before,
+.radio input[type=radio]:hover + label:before {
+	border-color: $primary-color;
+}
+.radio input[type=radio]:checked + label:after {
+	line-height: 16px;
+	transform: scale(0.63);
+	@include transition(transform 0.1s 0s cubic-bezier(0.4, 0.02, 0.3, 1.2));
+}
+
+.has-success {
+	.form-control {
+		border-color: $green-color;
+	}
+	.help-block, 
+	.control-label {
+		color: $green-color-dark;
+	}
+	.form-control:focus {
+		border-color: $green-color-dark;
+				box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 6px $green-color-dark;
+	}
+	.input-group-addon {
+		color: $green-color;
+		background-color: #dff0d8;
+		border-color: $green-color;
+	}
+}
+.has-warning {
+	.form-control {
+		border-color: $yellow-color;
+	}
+	.help-block, 
+	.control-label {
+		color: $yellow-color-dark;
+	}
+	.form-control:focus {
+		border-color: $yellow-color-dark;
+				box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 6px $yellow-color-dark;
+	}
+	.input-group-addon {
+		color: $yellow-color;
+		background-color: #fcf8e3;
+		border-color: $yellow-color;
+	}
+}
+.has-error {
+	.form-control {
+		border-color: $red-color;
+	}
+	.help-block, 
+	.control-label {
+		color: $red-color-dark;
+	}
+	.form-control:focus {
+		border-color: $red-color-dark;
+				box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 6px $red-color-dark;
+	}
+	.input-group-addon {
+		color: $red-color;
+		background-color: #f2dede;
+		border-color: $red-color;
+	}
+}
+
+.input-group > .form-control, 
+.input-group > .input-group-addon, 
+.input-group > .input-group-btn > .btn {
+	line-height: 1;
+}
+.input-group > .input-group-btn > .btn {
+	border: 0;
+	height: 34px;
+}
+.input-group-addon {
+	background: transparent;
+	border-color: $main-bg-color;
+	border-width: 2px;
+}
+.dropdown-menu {
+	@include border-radius($border-radius-base);
+}
+.help-block {
+	font-size: 0.875em;
+}
+.checkbox-inline > input {
+	margin-top: 0;
+}
+.dropdown-menu > .active > a, 
+.dropdown-menu > .active > a:hover, 
+.dropdown-menu > .active > a:focus {
+	background-color: $primary-color;
+}
+
+.bootstrap-timepicker-widget {
+	table td input {
+		border: 1px solid #ccc;
+		width: 30px !important;
+		height: 30px;
+	}
+	a.btn, 
+	input,
+	table td a:hover {
+		
+	}
+}
+.form-group-select2 label {
+	display: block;
+}
+.select2-container--default {
+	.select2-selection--single {
+		border-width: 2px !important;
+		border-color: $main-bg-color !important;
+
+		.select2-selection__arrow {
+			border-radius: 0 !important;
+			background-clip: padding-box;
+			background: $main-bg-color !important;
+			border-color: $main-bg-color !important;
+			width: 24px !important;
+		}
+	}
+	.select2-selection--multiple {
+		border-width: 2px !important;
+		border-color: $main-bg-color !important;
+
+		.select2-selection__choice {
+			background-color: $primary-color !important;
+			border: 0 !important;
+			color: #fff;
+			padding: 4px 5px !important;
+			font-size: 0.875em;
+		}
+		.select2-selection__choice__remove {
+			color: #fff !important;
+			margin-right: 4px !important;
+		}
+	}
+
+	.select2-results__option[aria-selected=true] {
+		background-color: #f1f1f1 !important;
+	}
+	.select2-results__option--highlighted[aria-selected] {
+		background-color: $primary-color !important;
+	}
+	.help-icon {
+		position: absolute;
+		right: 10px;
+		margin-top: 1px;
+		font-size: 1.25em;
+	}
+}
+.select2:focus,
+.select2-container--default .select2-selection--single:focus {
+	outline: none !important;
+}
+.select2-dropdown {
+	border-width: 2px !important;
+	border-color: $main-bg-color !important;
+}
+.select2-results__options {
+	margin: 0 4px 4px 4px !important;
+}
+.select2-results__option {
+	padding: 4px 6px !important;
+	font-size: 0.875em;
+}
+.select2-search--dropdown {
+	font-size: 0.875em;
+}
+.select2-search {
+	// margin-top: 4px !important;
+
+	input {
+		border-color: #e9e9e9 !important;
+
+		&:focus {
+			-webkit-appearance: none !important;
+			outline: none !important;
+		}
+	}
+}
+.select2-container--default.select2-container--open.select2-container--below .select2-selection--single, 
+.select2-container--default.select2-container--open.select2-container--below .select2-selection--multiple {
+	border-bottom-width: 1px !important;
+}
+.select2-container .select2-selection--single {
+	height: 34px !important;
+
+	.select2-selection__arrow {
+		height: 32px !important;
+	}
+	.select2-selection__rendered {
+		line-height: 32px !important;
+	}
+}
+#top-filter .select2-container .select2-selection--single,
+.select2-graph-changer .select2-container .select2-selection--single {
+	height: 37px !important;
+
+	.select2-selection__arrow,
+	.select2-selection__arrow {
+		height: 35px !important;
+	}
+	.select2-selection__rendered,
+	.select2-selection__rendered {
+		line-height: 34px !important;
+		font-size: 1.15em;
+	}
+}
+#top-filter .select2 {
+	margin-right: 12px;
+}
+.select2-graph-changer .select2 {
+	margin-left: 12px;
+}
+.tt-query {
+	box-shadow: none !important;
+}
+
+.wysiwyg-editor {
+	max-height: 250px;
+	height: 250px;
+	background-color: #fff;
+	border-collapse: separate; 
+	border: 1px solid $main-bg-color;
+	@include border-radius($border-radius-base); 
+	padding: 10px; 
+	@include box-sizing(content-box); 
+	overflow: scroll;
+	outline: none;
+}
+.btn-toolbar.editor-toolbar {
+	margin-bottom: 7px;
+}
+
+.checkbox-nice {
+	position: relative;
+	padding-left: 15px;
+
+	input[type=checkbox] {
+		visibility: hidden;
+	}
+	label {
+		padding-top: 3px
+	}
+	&.checkbox-inline > label {
+		margin-left: 16px;
+	}
+	label:before {
+		cursor: pointer;
+		position: absolute;
+		width: 22px;
+		height: 22px;
+		left: 1px;
+		top: 1px;
+		background: #ffffff;
+		content: "";
+		border: 2px solid $main-bg-color;
+		@include border-radius(3px);
+	}
+	label:after {
+		@include opacity(0);
+		content: '';
+		position: absolute;
+		width: 12px;
+		height: 7px;
+		background: transparent;
+		top: 7px;
+		left: 6px;
+		border: 3px solid $primary-color;
+		border-top: none;
+		border-right: none;
+
+		transform: rotate(-45deg);
+	}
+	label:hover::after {
+		@include opacity(0.3);
+	}
+	input[type=checkbox]:checked + label:after {
+		@include opacity(1);
+	}
+}
+
+/* FORM ON/OFF SWITCH */
+.onoffswitch {
+	position: relative; width: 90px;
+	@include box-sizing(content-box);
+	margin-right: 20px;
+}
+.onoffswitch-checkbox {
+	display: none;
+}
+.onoffswitch-label {
+	display: block; overflow: hidden; cursor: pointer;
+	border: 1px solid #999999; @include border-radius(20px);
+}
+.onoffswitch-inner {
+	width: 200%; margin-left: -100%;
+}
+.onoffswitch-inner:before, .onoffswitch-inner:after {
+	float: left; width: 50%; height: 30px; padding: 0; line-height: 30px;
+	font-size: 14px; color: white; font-family: Trebuchet, Arial, sans-serif; font-weight: bold;
+}
+.onoffswitch-inner:before {
+	content: "ON";
+	padding-left: 10px;
+	background-color: $primary-color; color: #FFFFFF;
+}
+.onoffswitch.onoffswitch-success .onoffswitch-inner:before {
+	background-color: $green-color;
+}
+.onoffswitch.onoffswitch-danger .onoffswitch-inner:before {
+	background-color: $red-color;
+}
+.onoffswitch.onoffswitch-warning .onoffswitch-inner:before {
+	background-color: $yellow-color;
+}
+.onoffswitch-inner:after {
+	content: "OFF";
+	padding-right: 10px;
+	background-color: #EEEEEE; color: #999999;
+	text-align: right;
+}
+.onoffswitch-switch {
+	width: 18px; margin: 6px;
+	background: #FFFFFF;
+	border: 1px solid #999999; 
+	@include border-radius(20px);
+	position: absolute; top: 0; bottom: 0; right: 56px;
+	@include box-sizing(content-box);
+}
+.onoffswitch-checkbox:checked + .onoffswitch-label .onoffswitch-inner {
+	margin-left: 0;
+}
+.onoffswitch-checkbox:checked + .onoffswitch-label .onoffswitch-switch {
+	right: 0px; 
+}
+
+/* AUTOCOMPLETE */
+.typeahead,
+.tt-query,
+.tt-hint {
+	width: 400px;
+
+	@media only screen and (max-width: 480px) {
+		width: 100%;
+	}
+}
+.twitter-typeahead {
+	display: block !important;
+}
+.typeahead {
+	background-color: #fff;
+
+	&:focus {
+		border: 2px solid #0097cf;
+	}
+}
+.tt-query {
+	box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);
+}
+.tt-hint {
+	color: #999;
+	padding-top: 5px;
+	padding-left: 11px;
+}
+.tt-dropdown-menu {
+	width: 422px;
+	margin-top: 12px;
+	padding: 0;
+	background-color: #fff;
+	border: 1px solid #ccc;
+	border: 1px solid rgba(0, 0, 0, 0.2);
+	box-shadow: 0 5px 10px rgba(0,0,0,.2);
+	@include border-radius($border-radius-base);
+
+	@media only screen and (max-width: 480px) {
+		width: 100%;
+	}
+}
+.tt-suggestion {
+	padding: 3px 20px;
+	font-size: 1em;
+	line-height: 20px;
+
+	&.tt-is-under-cursor {
+		color: #fff;
+		background-color: $primary-color;
+	}
+	p {
+		margin: 0;
+	}
+}
+.gist {
+	font-size: 12px;
+}
+.example-twitter-oss {
+	.tt-suggestion {
+		padding: 8px 20px;
+	}
+	.tt-suggestion + .tt-suggestion {
+		border-top: 1px solid #ccc;
+	}
+	.repo-language {
+		float: right;
+		font-style: italic;
+		font-size: 12px;
+	}
+	.repo-name {
+		font-weight: bold;
+	}
+	.repo-description {
+		font-size: 12px;
+	}
+}
+
+/* SLIDER */
+.slider-vertical {
+	height: 200px;
+	float: left;
+	margin-right: 20px;
+}
+
+/* DATEPICKER */
+.datepicker,
+.daterangepicker {
+	z-index:2200 !important;
+}
+.datepicker td, 
+.datepicker th,
+.daterangepicker td, 
+.daterangepicker th {
+	text-transform: uppercase;
+	font-size: 0.875em;
+}
+.datepicker table tr td.active:hover, .datepicker table tr td.active:hover:hover, .datepicker table tr td.active.disabled:hover, .datepicker table tr td.active.disabled:hover:hover, .datepicker table tr td.active:active, .datepicker table tr td.active:hover:active, .datepicker table tr td.active.disabled:active, .datepicker table tr td.active.disabled:hover:active, .datepicker table tr td.active.active, .datepicker table tr td.active.active:hover, .datepicker table tr td.active.disabled.active, .datepicker table tr td.active.disabled.active:hover, .datepicker table tr td.active.disabled, .datepicker table tr td.active.disabled:hover, .datepicker table tr td.active.disabled.disabled, .datepicker table tr td.active.disabled.disabled:hover, .datepicker table tr td.active[disabled], .datepicker table tr td.active[disabled]:hover, .datepicker table tr td.active.disabled[disabled], .datepicker table tr td.active.disabled[disabled]:hover {
+	background: $primary-color !important;
+}
+.daterangepicker td.active, .daterangepicker td.active:hover {
+	background: $primary-color !important;
+}
+.daterangepicker td.in-range {
+	background: #dceffc !important;
+}
+.daterangepicker .ranges li {
+	@include border-radius(0 !important);
+	color: $primary-color !important;
+}
+.daterangepicker .ranges li.active, 
+.daterangepicker .ranges li:hover {
+	background-color: $primary-color !important;
+	border-color: $primary-color !important;
+	color: #fff !important;
+}
+.daterangepicker .range_inputs button.applyBtn {
+	min-width: 74px;
+	margin-right: 7px;
+}
+.daterangepicker .range_inputs button.cancelBtn {
+	min-width: 74px;
+}

@@ -1,0 +1,331 @@
+/* LOGIN PAGE */
+#login-page {
+	background-color: $main-bg-color;
+}
+#login-page-full {
+	background-color: $main-bg-color;
+}
+#login-box {
+	max-width: 350px;
+	min-width: 280px;
+	margin: 60px auto 20px;
+	overflow: hidden;
+	@include border-radius($border-radius-base $border-radius-base 0 0);
+
+	@media only screen and (max-width: $break-xs-max) {
+		margin-top: 20px;
+	}
+
+	#login-box-header {
+		height: 5px;
+		
+		> div {
+			height: 100%;
+			width: 16.6667%;
+			float: left;
+		}
+		.login-box-header-red {
+			background: $red-color;
+		}
+		.login-box-header-green {
+			background: $green-color;
+		}
+		.login-box-header-yellow {
+			background: $yellow-color;
+		}
+		.login-box-header-purple {
+			background: $purple-color;
+		}
+		.login-box-header-blue {
+			background: $primary-color;
+		}
+		.login-box-header-gray {
+			background: $gray-color;
+		}
+	}
+}
+#login-box-inner {
+	background: #fff;
+	@include border-radius(0 0 $border-radius-base $border-radius-base);
+	border: 1px solid #e1e1e1;
+	border-bottom-width: 5px;
+	padding: 40px 25px;
+
+	&.with-heading {
+		padding-top: 20px;
+	}
+	h4 {
+		margin-top: 0;
+		margin-bottom: 10px;
+	}
+	.reset-pass-input {
+		padding: 15px 0;
+		margin-bottom: 0;
+	}
+}
+#login-logo {
+	background: none repeat scroll 0 0 #34495e;
+	color: #fff;
+	display: block;
+	font-size: 2em;
+	font-weight: 400;
+	padding: 35px 0;
+	text-align: center;
+	text-transform: uppercase;
+
+	> img {
+		display: block;
+		height: 40px;
+		margin: 0 auto;
+	}
+	> span {
+		display: block;
+		font-size: 0.6em;
+		font-weight: 300;
+		text-transform: none;
+	}
+}
+#login-box {
+	.input-group {
+		margin-bottom: 10px;
+		
+		input {
+			font-weight: 300;
+		}
+		.input-group-addon {
+			padding-left: 0;
+			padding-right: 0;
+			min-width: 50px;
+		}
+		.input-group-addon i {
+			color: #efefef;
+		}
+	}
+	#login-forget-link {
+		display: block;
+		font-size: 0.875em;
+		text-align: right;
+		margin-top: 3px;
+	}
+	#remember-me-wrapper {
+		padding: 10px 0;
+	}
+	.btn {
+		font-size: 1.125em;
+		font-weight: 600;
+		padding-bottom: 10px;
+		padding-top: 10px;
+		text-transform: uppercase;
+		margin-top: 8px;
+	}
+	.form-group {
+		margin-bottom: 7px;
+	
+		.checkbox label {
+			padding-left: 7px;
+		}
+		.checkbox input {
+			margin-left: 0;
+		}
+	}
+	.btn-facebook,
+	.btn-twitter {
+		text-transform: none;
+		font-size: 1em;
+		margin-bottom: 10px;
+	}
+	.social-text {
+		margin: 0;
+		padding: 15px 0;
+		text-align: center;
+		font-size: 0.875em;
+	}
+}
+#login-box-inner .input-group {
+	> .form-control,
+	> .input-group-addon {
+		height: 46px;
+		line-height: 42px;
+		padding-top: 0;
+		padding-bottom: 0;
+	}
+	> .input-group-addon {
+		height: 44px;
+	}
+}
+#login-box-footer {
+	text-align: center;
+	font-size: 0.875em;
+	margin-top: 10px;
+}
+#login-full-wrapper #login-box-footer {
+	color: #fff;
+
+	a {
+		color: #fff;
+		text-decoration: underline;
+
+		&:hover {
+			text-decoration: none;
+		}
+	}
+}
+#login-page .login-create,
+#login-page-full .login-create {
+	margin-bottom: 20px;
+}
+#login-full-wrapper {
+	background: url(../../img/login-img.jpg) no-repeat center center;
+	background-size: cover;
+	width: 100%;
+	height: 100%;
+	position: absolute;
+
+	@media (max-height: 605px) { 
+		position: relative;
+	}
+	@media (max-height: 621px) and (max-width: $break-xs-max) {
+		position: relative;
+	}
+}
+#login-full-wrapper #login-box {
+	border: none;
+}
+#login-page-full {
+	.container {
+		max-width: 1440px;
+		margin: 0 auto;
+	}
+	.login-full-create {
+		margin-right: 20px;
+		line-height: 50px;
+	}
+}
+#login-full-left {
+	margin-top: 50px;
+	margin-bottom: 20px;
+
+	h1 {
+		text-align: center;
+		color: #363636;
+		font-weight: 600;
+		margin-bottom: 40px;
+	}
+	h2 {
+		text-align: center;
+		margin-top: 30px;
+	}
+	p.login-full-devices {
+		margin-top: 30px;
+	}
+	.login-full-features {
+		margin: 20px 0;
+		padding: 0;
+		list-style: none;
+		text-align: center;
+	
+		> li {
+			display: inline-block;
+			margin: 0 8px;
+		}
+		> li > i {
+			display: block;
+			text-align: center;
+			font-size: 1.6em;
+			margin-bottom: 4px;
+		}
+		> li > span {
+			display: block;
+			text-align: center;
+			font-size: 0.845em;
+			line-height: 1.2;
+		}
+	}
+}
+#login-full-wrapper.reset-password-wrapper {
+	@media (max-height: 605px) {
+		position: absolute;
+	}
+	@media (max-height: 505px) { 
+		position: relative;
+	}
+}
+
+/* LOCK SCREEN */
+#lock-screen-user {
+	img {
+		@include border-radius(18%);
+	    display: block;
+	    height: 100px;
+	    margin: 0 auto;
+	    width: 100px;
+	}
+	.user-box {
+		.name {
+			display: block;
+		    font-size: 1.3em;
+		    padding: 10px 0 40px;
+		    text-align: center;
+		}
+	}
+}
+
+/* PASSWORD METER */
+#pwindicator {
+	margin-top: 15px;
+	margin-bottom: 5px;
+	width: 150px;
+}
+.pwdindicator {
+	.bar {
+		height: 4px;
+	}
+	.pwdstrength-label {
+		
+	}
+	&.pw-very-weak {
+		.bar {
+			background: #fb241f;
+			width: 30px;
+		}
+		.pwdstrength-label {
+			color: #fb241f;
+		}
+	}
+	&.pw-weak {
+		.bar {
+			background: $red-color;
+			width: 60px;
+		}
+		.pwdstrength-label {
+			color: $red-color;
+		}
+	}
+	&.pw-mediocre {
+		.bar {
+			background: $yellow-color;
+			width: 90px;
+		}
+		.pwdstrength-label {
+			color: $yellow-color;
+		}
+	}
+	&.pw-strong {
+		.bar {
+			background: #f3b31a;
+			width: 120px;
+		}
+		.pwdstrength-label {
+			color: #f3b31a;
+		}
+	}
+	&.pw-very-strong {
+		.bar {
+			background: $green-color;
+			width: 150px;
+		}
+		.pwdstrength-label {
+			color: $green-color;
+		}
+	}
+}

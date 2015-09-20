@@ -1,0 +1,278 @@
+/* USER PROFILE */
+#user-profile {
+	h2 {
+		padding-right: 15px;
+	}
+	.profile-status {
+		font-size: 0.75em;
+		margin-top: -10px;
+		padding-bottom: 10px;
+		color: @green-color;
+	
+		&.offline {
+			color: @red-color;
+		}
+	}
+	.profile-img {
+		.border-radius(50%);
+		margin-bottom: 15px;
+	}
+	.profile-label {
+		text-align: center;
+		padding: 5px 0;
+
+		&.label {
+			padding: 5px 15px;
+			font-size: 1em;
+		}
+	}
+	.profile-stars {
+		color: #FABA03;
+		padding: 7px 0;
+		text-align: center;
+		
+		> i {
+			margin-left: -2px;
+		}
+	}
+	.profile-since {
+		text-align: center;
+		margin-top: -5px;
+	}
+	.profile-details {
+		padding: 15px 0;
+		border-top: 1px solid @main-bg-color;
+		border-bottom: 1px solid @main-bg-color;
+		margin: 15px 0;
+	
+		ul {
+			padding: 0;
+			margin-top: 0;
+			margin-bottom: 0;
+			margin-left: 40px;
+		
+			> li {
+				margin: 3px 0;
+				line-height: 1.5;
+
+				> i {
+					padding-top: 2px;
+				}
+				> span {
+					color: @primary-color;
+				}
+			}
+		}
+	}
+	.profile-header {
+		position: relative;
+
+		> h3 {
+			margin-top: 10px
+		}
+		.edit-profile {
+			margin-top: -6px;
+			position: absolute;
+			right: 0;
+			top: 0;
+
+			@media only screen and (max-width: @break-xxs-max) {
+				display: block;
+				position: relative;
+				margin-bottom: 15px;
+			}
+		}
+	}
+	.profile-tabs {
+		/* margin-top: 30px; */
+	}
+	.profile-user-info {
+		padding-bottom: 20px;
+		padding-top: 10px;
+
+		.profile-user-details {
+			position: relative;
+			padding: 4px 0;
+		}
+		.profile-user-details .profile-user-details-label {
+			width: 110px;
+			float: left;
+			bottom: 0;
+			font-weight: bold;
+			left: 0;
+			position: absolute;
+			text-align: right;
+			top: 0;
+			width: 110px;
+			padding-top: 4px;
+
+			@media only screen and (max-width: @break-xs-max) {
+				float: none;
+				position: relative;
+				text-align: left;
+			}
+		}
+		.profile-user-details .profile-user-details-value {
+			margin-left: 120px;
+			
+			@media only screen and (max-width: @break-xs-max) {
+				margin-left: 0;
+			}
+		}
+	}
+	.profile-social {
+		@media only screen and (max-width: @break-xs-max) {
+			margin-top: 20px;
+		}
+	
+		li {
+			padding: 4px 0;
+		}
+		li > i {
+			padding-top: 6px;
+		}
+	}
+	.profile-message-btn .btn {
+		@media only screen and (max-width: @break-xxs-max) {
+			display: block;
+		}
+	}
+	.table tbody tr {
+		td {
+			padding-bottom: 20px;
+			padding-top: 20px;
+		}
+		&:first-child td {
+			border-top: none;
+		}
+	}
+}
+
+/* NEWSFEED */
+#newsfeed {
+	.story {
+		padding: 40px 0;
+		margin: 0 20px;
+		border-bottom: 1px solid @main-bg-color;
+
+		&:last-child {
+			border-bottom: 0;
+		}
+
+		@media (max-width: @break-xs-max) {
+			padding: 20px 0;
+			margin: 0;
+		}
+	}
+	.story-user {
+		position: absolute;
+
+		a {
+			display: block;
+		}
+		a img {
+			display: block;
+			width: 70px;
+			height: 70px;
+			.border-radius(50%);
+
+			@media (max-width: @break-xs-max) {
+				width: 30px;
+				height: 30px;
+			}
+		}
+	}
+	.story-content {
+		padding-left: 100px;
+		position: relative;
+
+		@media (max-width: @break-xs-max) {
+			padding-left: 40px;
+		}
+
+		.story-header {
+			.story-author {
+				font-weight: 300;
+			}
+			.story-author a {
+				font-weight: 400;
+			}
+			.story-time {
+				color: #999;
+				font-size: 0.75em;
+				position: absolute;
+				right: 0px;
+				top: 0;
+
+				@media (max-width: 1170px) {
+					position: relative;
+					padding-top: 2px;
+				}
+			}
+		}
+		.story-inner-content {
+			color: #6c6f75;
+			font-size: 0.85em;
+			padding: 12px 0;
+		}
+		.story-footer {
+			font-size: 0.85em;
+
+			.story-comments-link {
+				color: @text-color;
+				margin-right: 10px;
+			
+				&:hover {
+					color: #161e1d;
+					text-decoration: none;
+				}
+			}
+			.story-likes-link {
+				color: @red-color;
+			
+				&:hover {
+					color: @red-color-dark;
+					text-decoration: none;
+				}
+			}
+		}
+	}
+	.map-content {
+		width: 100%;
+		height: 200px;
+	}
+	.story-images {
+		.story-image-link {
+			display: block;
+			width: 50%;
+			float: left;
+			padding-right: 2px;
+
+			@media (max-width: @break-xs-max) {
+				width: 50%;
+			}
+		}
+		.story-image-link-small {
+			width: 25%;
+			padding-bottom: 2px;
+
+			@media (max-width: @break-xs-max) {
+				width: 50%;
+			}
+		}
+	}
+}
+.widget-users {
+	padding: 0 20px;
+
+	@media (max-width: @break-xs-max) {
+		padding: 0 10px;
+	}
+}
+.conversation-wrapper {
+	padding: 10px 20px;
+
+	@media (max-width: @break-xs-max) {
+		padding: 10px 5px;
+	}
+}

@@ -1,0 +1,100 @@
+/* RECENT - PRODUCTS */
+.widget-products {
+	list-style: none;
+	margin: 0;
+	padding: 0;
+
+	li {
+		border-bottom: 2px solid #ebebeb;
+	
+		> a {
+			height: 88px;
+			display: block;
+			width: 100%;
+			color: $text-color;
+			padding: 3px 10px;
+			position: relative;
+			@include transition(border-color 0.1s ease-in-out 0s, background-color 0.1s ease-in-out 0s);
+
+			@media only screen and (max-width: 440px) {
+				height: auto;
+				padding-bottom: 10px;
+			}
+		
+			&:hover {
+				color: $text-color;
+				text-decoration: none;
+				background-color: #f6f6f6;
+			}
+			&:after {
+				content: "\f138";
+				font-family: FontAwesome;
+				font-size: 0.875em;
+				font-style: normal;
+				font-weight: normal;
+				margin-top: 32px;
+				position: absolute;
+				right: 10px;
+				text-decoration: inherit;
+				top: 0;
+				color: #cccccc;
+				font-size: 1.3em;
+
+				@media only screen and (max-width: 440px) {
+					display: none;
+				}
+			}
+		}
+		.img {
+			display: block;
+			float: left;
+			text-align: center;
+			width: 70px;
+			height: 68px;
+			overflow: hidden;
+			margin-top: 7px;
+		}
+		.product {
+			display: block;
+			margin-left: 90px;
+			margin-top: 19px;
+		
+			> .name {
+				display: block;
+				font-weight: 600;
+				padding-bottom: 7px;
+			}
+			> .price {
+				display: block;
+				text-decoration: none;
+				width: 50%;
+				float: left;
+				font-size: 0.875em;
+
+				@media only screen and (max-width: 440px) {
+					width: 100%;
+				}
+			
+				> i {
+					color: $green-color;
+				}
+			}
+			> .warranty {
+				display: block;
+				text-decoration: none;
+				width: 50%;
+				float: left;
+				font-size: 0.875em;
+
+				@media only screen and (max-width: 440px) {
+					clear: both;
+					width: 100%;
+				}
+			
+				> i {
+					color: $yellow-color;
+				}
+			}
+		}
+	}
+}

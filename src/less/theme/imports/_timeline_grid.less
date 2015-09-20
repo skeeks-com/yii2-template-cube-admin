@@ -1,0 +1,36 @@
+/* TIMELINE GRID STYLE */
+#timeline-grid {
+	position: relative;
+
+	.item {
+		.border-radius(@border-radius-base);
+	    box-shadow: 1px 1px 2px 0 #CCCCCC;
+		overflow:hidden;
+		background: #fff;
+	
+		a {
+			text-decoration: none;
+
+			&:hover {
+				text-decoration: underline;
+			}
+		}
+		img {
+			width:100%;
+		}
+		.text {
+			display:block;
+		}
+	}
+	.item .time, 
+	.tweet .user {
+		font-style: italic;
+		color: #666666;	
+	}
+	.tweet-wrapper {
+		padding:10px;
+		line-height:16px;
+		font-size: 0.875em;
+		line-height: 1.4;
+	}
+}

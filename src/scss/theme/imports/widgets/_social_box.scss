@@ -1,0 +1,55 @@
+/* SOCIAL BOX */
+.social-box-wrapper {
+	box-shadow: 1px 1px 2px 0 #cccccc;
+	@include border-radius($border-radius-base);
+	margin-bottom: 16px;
+	overflow: hidden;
+}
+.social-box {
+	color: #fff;
+	padding: 15px;
+	font-weight: 300;
+	@include transition(background-color 0.15s ease-in-out 0s);
+
+	.social-count {
+		float: left;
+		display: block;
+		font-size: 1.8em;
+		font-weight: 400;
+	}
+	.social-action {
+		float: left;
+		display: block;
+		font-size: 1.2em;
+		margin-left: 5px;
+		margin-top: 9px;
+	}
+	.social-name {
+		display: block;
+		font-size: 0.875em;
+		padding-top: 4px;
+	}
+	> i {
+		font-size: 3.4em;
+		text-align: right;
+		display: block;
+	}
+	&.facebook {
+		background: #3b5998;
+	}
+	&.facebook:hover {
+		background-color: #2f477b;
+	}
+	&.twitter {
+		background: #55acee;
+	}
+	&.twitter:hover {
+		background-color: #4091ce;
+	}
+	&.google {
+		background: #dd4b39;
+	}
+	&.google:hover {
+		background-color: #c43a2a;
+	}
+}

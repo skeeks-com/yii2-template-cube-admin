@@ -1,0 +1,374 @@
+<div class="row">
+	<div class="col-lg-12">
+		<ol class="breadcrumb">
+			<li><a href="">Home</a></li>
+			<li><a href=""><span>Graphs</span></a></li>
+			<li class="active"><span>Morris charts and others</span></li>
+		</ol>
+		
+		<h1>Morris charts and others</h1>
+	</div>
+</div>
+
+<div class="row">
+	<div class="col-lg-12">
+		<div class="main-box">
+			<header class="main-box-header clearfix">
+				<h2>Morris Area charts</h2>
+			</header>
+			
+			<div class="main-box-body clearfix">
+				<div id="hero-area"></div>
+			</div>
+		</div>
+	</div>
+</div>
+
+<div class="row">
+	<div class="col-lg-12">
+		<div class="main-box">
+			<header class="main-box-header clearfix">
+				<h2>Morris Bar charts</h2>
+			</header>
+			
+			<div class="main-box-body clearfix">
+				<div id="graph-bar"></div>
+			</div>
+		</div>
+	</div>
+</div>
+
+<div class="row">
+	<div class="col-lg-6">
+		<div class="main-box">
+			<header class="main-box-header clearfix">
+				<h2>Different line charts</h2>
+			</header>
+			
+			<div class="main-box-body clearfix">
+				<div id="hero-graph"></div>
+			</div>
+		</div>
+	</div>
+	<div class="col-lg-6">
+		<div class="main-box">
+			<header class="main-box-header clearfix">
+				<h2>Bar charts</h2>
+			</header>
+			
+			<div class="main-box-body clearfix">
+				<div id="hero-bar"></div>
+			</div>
+		</div>
+	</div>
+</div>
+
+<div class="row">
+	<div class="col-lg-6">
+		<div class="main-box">
+			<header class="main-box-header clearfix">
+				<h2>Area charts with multiple datasets</h2>
+			</header>
+			
+			<div class="main-box-body clearfix">
+				<div id="graph"></div>
+			</div>
+		</div>
+	</div>
+	<div class="col-lg-6">
+		<div class="main-box">
+			<header class="main-box-header clearfix">
+				<h2>Donut flavours</h2>
+			</header>
+			
+			<div class="main-box-body clearfix">
+				<div id="hero-donut"></div>
+			</div>
+		</div>
+	</div>
+</div>
+
+<h1>Knob charts</h1>
+<div class="row">
+	<div class="col-lg-4">
+		<div class="main-box">
+			<header class="main-box-header clearfix">
+				<h2>Display previous value</h2>
+			</header>
+			
+			<div class="main-box-body clearfix">
+				<div class="center-block" style="width: 200px;">
+					<input class="knob" data-width="200" data-min="-100" data-fgColor="#03a9f4" data-displayPrevious=true value="44">
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="col-lg-4">
+		<div class="main-box">
+			<header class="main-box-header clearfix">
+				<h2>'cursor' mode</h2>
+			</header>
+			
+			<div class="main-box-body clearfix">
+				<div class="center-block" style="width: 200px;">
+					<input class="knob" data-width="200" data-cursor=true data-fgColor="#90a4ae" data-thickness=.3 value="29">
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="col-lg-4">
+		<div class="main-box">
+			<header class="main-box-header clearfix">
+				<h2>Angle offset</h2>
+			</header>
+			
+			<div class="main-box-body clearfix">
+				<div class="center-block" style="width: 200px;">
+					<input class="knob" data-angleOffset=-125 data-angleArc=250 data-fgColor="#8bc34a" value="35">
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+
+<div class="row">
+	<div class="col-lg-4">
+		<div class="main-box">
+			<header class="main-box-header clearfix">
+				<h2>Overloaded 'draw' method</h2>
+			</header>
+			
+			<div class="main-box-body clearfix">
+				<div class="center-block" style="width: 200px;">
+					<input class="knob" data-width="200" data-angleOffset="180" data-fgColor="#e84e40" data-skin="tron" data-thickness=".1" value="35">
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="col-lg-4">
+		<div class="main-box">
+			<header class="main-box-header clearfix">
+				<h2>Readonly</h2>
+			</header>
+			
+			<div class="main-box-body clearfix">
+				<div class="center-block" style="width: 200px;">
+					<input class="knob" data-fgColor="#ffc107" data-thickness=".4" data-readOnly=true value="22">
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="col-lg-4">
+		<div class="main-box">
+			<header class="main-box-header clearfix">
+				<h2>Infinite || iPod click wheel</h2>
+			</header>
+			
+			<div class="main-box-body clearfix">
+				<div class="center-block" style="width: 200px;">
+					<input class="infinite" data-width="200" data-thickness=".5" data-fgColor="#9c27b0" data-bgColor="#eeeeee" data-displayInput="false" data-cursor=true>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+
+<!-- this page specific inline scripts -->
+<script>
+$(function($) {
+	graphArea = Morris.Area({
+		element: 'graph',
+		behaveLikeLine: true,
+		data: [
+			{x: '2011 Q1', y: 3, z: 3},
+			{x: '2011 Q2', y: 2, z: 1},
+			{x: '2011 Q3', y: 2, z: 4},
+			{x: '2011 Q4', y: 3, z: 3}
+		],
+		lineColors: ['#ffc107', '#03a9f4'],
+		xkey: 'x',
+		ykeys: ['y', 'z'],
+		labels: ['Y', 'Z'],
+		resize: true
+	});
+	
+	graphBar = Morris.Bar({
+		element: 'graph-bar',
+		data: [
+			{x: '2011 Q1', y: 3, z: 2, a: 3},
+			{x: '2011 Q2', y: 2, z: null, a: 1},
+			{x: '2011 Q3', y: 0, z: 2, a: 4},
+			{x: '2011 Q4', y: 2, z: 4, a: 3}
+		],
+		barColors: ['#8bc34a', '#ffc107', '#e84e40', '#03a9f4', '#9c27b0', '#90a4ae'],
+		xkey: 'x',
+		ykeys: ['y', 'z', 'a'],
+		labels: ['Y', 'Z', 'A'],
+		resize: true
+	});
+	
+	var tax_data = [
+		{"period": "2011 Q3", "licensed": 3407, "sorned": 660},
+		{"period": "2011 Q2", "licensed": 3351, "sorned": 629},
+		{"period": "2011 Q1", "licensed": 3269, "sorned": 618},
+		{"period": "2010 Q4", "licensed": 3246, "sorned": 661},
+		{"period": "2009 Q4", "licensed": 3171, "sorned": 676},
+		{"period": "2008 Q4", "licensed": 3155, "sorned": 681},
+		{"period": "2007 Q4", "licensed": 3226, "sorned": 620},
+		{"period": "2006 Q4", "licensed": 3245, "sorned": null},
+		{"period": "2005 Q4", "licensed": 3289, "sorned": null}
+	];
+	graphLine = Morris.Line({
+		element: 'hero-graph',
+		data: tax_data,
+		lineColors: ['#8bc34a', '#ffc107', '#e84e40', '#03a9f4', '#9c27b0', '#90a4ae'],
+		xkey: 'period',
+		ykeys: ['licensed', 'sorned'],
+		labels: ['Licensed', 'Off the road'],
+		resize: true
+	});
+
+	graphDonut = Morris.Donut({
+		element: 'hero-donut',
+		data: [
+			{label: 'Jam', value: 25 },
+			{label: 'Frosted', value: 40 },
+			{label: 'Custard', value: 25 },
+			{label: 'Sugar', value: 10 }
+		],
+		colors: ['#8bc34a', '#ffc107', '#e84e40', '#03a9f4', '#9c27b0', '#90a4ae'],
+		formatter: function (y) { return y + "%" },
+		resize: true
+	});
+
+	graphArea2 = Morris.Area({
+		element: 'hero-area',
+		data: [
+			{period: '2010 Q1', iphone: 2666, ipad: null, itouch: 2647},
+			{period: '2010 Q2', iphone: 2778, ipad: 2294, itouch: 2441},
+			{period: '2010 Q3', iphone: 4912, ipad: 1969, itouch: 2501},
+			{period: '2010 Q4', iphone: 3767, ipad: 3597, itouch: 5689},
+			{period: '2011 Q1', iphone: 6810, ipad: 1914, itouch: 2293},
+			{period: '2011 Q2', iphone: 5670, ipad: 4293, itouch: 1881},
+			{period: '2011 Q3', iphone: 4820, ipad: 3795, itouch: 1588},
+			{period: '2011 Q4', iphone: 15073, ipad: 5967, itouch: 5175},
+			{period: '2012 Q1', iphone: 10687, ipad: 4460, itouch: 2028},
+			{period: '2012 Q2', iphone: 8432, ipad: 5713, itouch: 1791}
+		],
+		lineColors: ['#0288d1', '#607d8b', '#689f38', '#8e44ad', '#c0392b', '#f39c12'],
+		xkey: 'period',
+		ykeys: ['iphone', 'ipad', 'itouch'],
+		labels: ['iPhone', 'iPad', 'iPod Touch'],
+		pointSize: 2,
+		hideHover: 'auto',
+		resize: true
+	});
+	
+	graphBar2 = Morris.Bar({
+		element: 'hero-bar',
+		data: [
+			{device: 'iPhone', geekbench: 136},
+			{device: 'iPhone 3G', geekbench: 137},
+			{device: 'iPhone 3GS', geekbench: 275},
+			{device: 'iPhone 4', geekbench: 380},
+			{device: 'iPhone 4S', geekbench: 655},
+			{device: 'iPhone 5', geekbench: 1571}
+		],
+		barColors: ['#8bc34a', '#e84e40', '#f39c12', '#3fcfbb', '#626f70', '#8f44ad'],
+		xkey: 'device',
+		ykeys: ['geekbench'],
+		labels: ['Geekbench'],
+		barRatio: 0.4,
+		xLabelAngle: 35,
+		hideHover: 'auto',
+		resize: true
+	});
+	
+	/* KNOB CHART LIBRARY */
+	
+	$(".knob").knob({
+		change : function (value) {
+			//console.log("change : " + value);
+		},
+		release : function (value) {
+			//console.log(this.$.attr('value'));
+			console.log("release : " + value);
+		},
+		cancel : function () {
+			console.log("cancel : ", this);
+		},
+		draw : function () {
+
+			// "tron" case
+			if(this.$.data('skin') == 'tron') {
+
+				var a = this.angle(this.cv)  // Angle
+					, sa = this.startAngle		  // Previous start angle
+					, sat = this.startAngle		 // Start angle
+					, ea							// Previous end angle
+					, eat = sat + a				 // End angle
+					, r = 1;
+
+				this.g.lineWidth = this.lineWidth;
+
+				this.o.cursor
+					&& (sat = eat - 0.3)
+					&& (eat = eat + 0.3);
+
+				if (this.o.displayPrevious) {
+					ea = this.startAngle + this.angle(this.v);
+					this.o.cursor
+						&& (sa = ea - 0.3)
+						&& (ea = ea + 0.3);
+					this.g.beginPath();
+					this.g.strokeStyle = this.pColor;
+					this.g.arc(this.xy, this.xy, this.radius - this.lineWidth, sa, ea, false);
+					this.g.stroke();
+				}
+
+				this.g.beginPath();
+				this.g.strokeStyle = r ? this.o.fgColor : this.fgColor ;
+				this.g.arc(this.xy, this.xy, this.radius - this.lineWidth, sat, eat, false);
+				this.g.stroke();
+
+				this.g.lineWidth = 2;
+				this.g.beginPath();
+				this.g.strokeStyle = this.o.fgColor;
+				this.g.arc( this.xy, this.xy, this.radius - this.lineWidth + 1 + this.lineWidth * 2 / 3, 0, 2 * Math.PI, false);
+				this.g.stroke();
+
+				return false;
+			}
+		}
+	});
+
+	// Example of infinite knob, iPod click wheel
+	var v, up=0,down=0,i=0
+		,$idir = $("div.idir")
+		,$ival = $("div.ival")
+		,incr = function() { i++; $idir.show().html("+").fadeOut(); $ival.html(i); }
+		,decr = function() { i--; $idir.show().html("-").fadeOut(); $ival.html(i); };
+		
+	$("input.infinite").knob({
+		min : 0
+		, max : 20
+		, stopper : false
+		, change : function () {
+			if(v > this.cv){
+				if(up){
+					decr();
+					up=0;
+				}else{up=1;down=0;}
+			} else {
+				if(v < this.cv){
+					if(down){
+						incr();
+						down=0;
+					}else{down=1;up=0;}
+				}
+			}
+			v = this.cv;
+		}
+	});
+});
+</script>

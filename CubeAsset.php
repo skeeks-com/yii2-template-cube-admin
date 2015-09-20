@@ -11,7 +11,7 @@ use yii\web\AssetBundle;
 
 class CubeAsset extends AssetBundle
 {
-    public $sourcePath = '@skeeks/template/smarty/src/HTML/assets/';
+    public $sourcePath = '@skeeks/template/cube/src/';
 
     /**
      * @param string $asset

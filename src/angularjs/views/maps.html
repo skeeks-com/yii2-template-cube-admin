@@ -1,0 +1,229 @@
+<style type="text/css">
+/* Set a size for our map container, the Google Map will take up 100% of this container */
+.map-content {
+    width: 100%;
+    height: 300px;
+}
+</style>
+	
+<div class="row">
+	<div class="col-lg-12">
+		<ol class="breadcrumb">
+			<li><a href="">Home</a></li>
+			<li class="active"><span>Dashboard</span></li>
+		</ol>
+		
+		<h1>Dashboard</h1>
+	</div>
+</div>
+
+<div class="row">
+	<div class="col-md-6">
+		<div class="main-box clearfix">
+			<header class="main-box-header clearfix">
+				<h2>Map with pointers</h2>
+			</header>
+			
+			<div class="main-box-body clearfix">
+				<div id="map" class="map-content"></div>
+			</div>
+		</div>
+	</div>
+	<div class="col-md-6">
+		<div class="main-box clearfix">
+			<header class="main-box-header clearfix">
+				<h2>Grayscale Map</h2>
+			</header>
+			
+			<div class="main-box-body clearfix">
+				<div id="map-grayscale" class="map-content"></div>
+			</div>
+		</div>
+	</div>
+</div>
+
+<div class="row">
+	<div class="col-md-6">
+		<div class="main-box clearfix">
+			<header class="main-box-header clearfix">
+				<h2>Geolocation</h2>
+			</header>
+			
+			<div class="main-box-body clearfix">
+				<div id="map-geo" class="map-content"></div>
+			</div>
+		</div>
+	</div>
+	<div class="col-md-6">
+		<div class="main-box clearfix">
+			<header class="main-box-header clearfix">
+				<h2>Blue Water</h2>
+			</header>
+			
+			<div class="main-box-body clearfix">
+				<div id="map-blue" class="map-content"></div>
+			</div>
+		</div>
+	</div>
+</div>
+
+<div class="row">
+	<div class="col-xs-12">
+		<div class="main-box clearfix">
+			<header class="main-box-header clearfix">
+				<h2>Apple style</h2>
+			</header>
+			
+			<div class="main-box-body clearfix">
+				<div id="map-apple" class="map-content"></div>
+			</div>
+		</div>
+	</div>
+</div>
+	
+<!-- this page specific inline scripts -->
+<script type="text/javascript">
+    function init() {
+    	var latlng = new google.maps.LatLng(40.763986, -73.958674);
+    	var latlngIndia = new google.maps.LatLng(22.394181, 78.384689);
+    	
+        // Basic options for a simple Google Map
+        // For more options see: https://developers.google.com/maps/documentation/javascript/reference#MapOptions
+        var mapOptions = {
+            // How zoomed in you want the map to start at (always required)
+            zoom: 11,
+            scrollwheel: false,
+            
+            // The latitude and longitude to center the map (always required)
+            center: latlng,
+        };
+
+        // Get the HTML DOM element that will contain your map 
+        // We are using a div with id="map" seen below in the <body>
+        var mapElement = document.getElementById('map');
+
+        // Create the Google Map using out element and options defined above
+        var map = new google.maps.Map(mapElement, mapOptions);
+        
+        var marker = new google.maps.Marker({
+    		position: latlng,
+    		map: map
+    	});
+    	
+        //GRAYSCALE MAP
+        var mapOptionsGray = {
+            zoom: 4,
+            scrollwheel: false,
+            center: latlngIndia,
+
+            // How you would like to style the map. 
+            // This is where you would paste any style found on Snazzy Maps.
+            styles: [{featureType:"landscape",stylers:[{saturation:-100},{lightness:65},{visibility:"on"}]},{featureType:"poi",stylers:[{saturation:-100},{lightness:51},{visibility:"simplified"}]},{featureType:"road.highway",stylers:[{saturation:-100},{visibility:"simplified"}]},{featureType:"road.arterial",stylers:[{saturation:-100},{lightness:30},{visibility:"on"}]},{featureType:"road.local",stylers:[{saturation:-100},{lightness:40},{visibility:"on"}]},{featureType:"transit",stylers:[{saturation:-100},{visibility:"simplified"}]},{featureType:"administrative.province",stylers:[{visibility:"off"}]/**/},{featureType:"administrative.locality",stylers:[{visibility:"off"}]},{featureType:"administrative.neighborhood",stylers:[{visibility:"on"}]/**/},{featureType:"water",elementType:"labels",stylers:[{visibility:"on"},{lightness:-25},{saturation:-100}]},{featureType:"water",elementType:"geometry",stylers:[{hue:"#ffff00"},{lightness:-25},{saturation:-97}]}]
+        };
+
+        var mapElementGray = document.getElementById('map-grayscale');
+
+        // Create the Google Map using out element and options defined above
+        var mapGray = new google.maps.Map(mapElementGray, mapOptionsGray);
+        
+        var markerGray = new google.maps.Marker({
+    		position: latlngIndia,
+    		map: mapGray
+    	});
+    	
+        //BLUE WATER MAP
+        var mapOptionsBlue = {
+            zoom: 12,
+            scrollwheel: false,
+            center: latlng,
+
+            // How you would like to style the map. 
+            // This is where you would paste any style found on Snazzy Maps.
+            styles: [	{		featureType:'water',		stylers:[{color:'#46bcec'},{visibility:'on'}]	},{		featureType:'landscape',		stylers:[{color:'#f2f2f2'}]	},{		featureType:'road',		stylers:[{saturation:-100},{lightness:45}]	},{		featureType:'road.highway',		stylers:[{visibility:'simplified'}]	},{		featureType:'road.arterial',		elementType:'labels.icon',		stylers:[{visibility:'off'}]	},{		featureType:'administrative',		elementType:'labels.text.fill',		stylers:[{color:'#444444'}]	},{		featureType:'transit',		stylers:[{visibility:'off'}]	},{		featureType:'poi',		stylers:[{visibility:'off'}]	}]
+        };
+
+        var mapElementBlue = document.getElementById('map-blue');
+
+        // Create the Google Map using out element and options defined above
+        var mapBlue = new google.maps.Map(mapElementBlue, mapOptionsBlue);
+        
+        var markerBlue = new google.maps.Marker({
+    		position: latlng,
+    		map: mapBlue
+    	});
+    	
+        //APPLE MAP
+        var mapOptionsApple = {
+            zoom: 12,
+            scrollwheel: false,
+            center: latlng,
+
+            // How you would like to style the map. 
+            // This is where you would paste any style found on Snazzy Maps.
+            styles: [{"featureType":"water","elementType":"geometry","stylers":[{"color":"#a2daf2"}]},{"featureType":"landscape.man_made","elementType":"geometry","stylers":[{"color":"#f7f1df"}]},{"featureType":"landscape.natural","elementType":"geometry","stylers":[{"color":"#d0e3b4"}]},{"featureType":"landscape.natural.terrain","elementType":"geometry","stylers":[{"visibility":"off"}]},{"featureType":"poi.park","elementType":"geometry","stylers":[{"color":"#bde6ab"}]},{"featureType":"poi","elementType":"labels","stylers":[{"visibility":"off"}]},{"featureType":"poi.medical","elementType":"geometry","stylers":[{"color":"#fbd3da"}]},{"featureType":"poi.business","stylers":[{"visibility":"off"}]},{"featureType":"road","elementType":"geometry.stroke","stylers":[{"visibility":"off"}]},{"featureType":"road","elementType":"labels","stylers":[{"visibility":"off"}]},{"featureType":"road.highway","elementType":"geometry.fill","stylers":[{"color":"#ffe15f"}]},{"featureType":"road.highway","elementType":"geometry.stroke","stylers":[{"color":"#efd151"}]},{"featureType":"road.arterial","elementType":"geometry.fill","stylers":[{"color":"#ffffff"}]},{"featureType":"road.local","elementType":"geometry.fill","stylers":[{"color":"black"}]},{"featureType":"transit.station.airport","elementType":"geometry.fill","stylers":[{"color":"#cfb2db"}]}]
+        };
+
+        var mapElementApple = document.getElementById('map-apple');
+
+        // Create the Google Map using out element and options defined above
+        var mapApple = new google.maps.Map(mapElementApple, mapOptionsApple);
+        
+        var markerApple = new google.maps.Marker({
+    		position: latlng,
+    		map: mapApple
+    	});
+    }
+
+    init();
+    
+    //GEOLOCATION
+    var mapGeo;
+
+    function initialize() {
+      var mapOptions = {
+        zoom: 6
+      };
+      mapGeo = new google.maps.Map(document.getElementById('map-geo'),
+          mapOptions);
+
+      // Try HTML5 geolocation
+      if(navigator.geolocation) {
+        navigator.geolocation.getCurrentPosition(function(position) {
+          var pos = new google.maps.LatLng(position.coords.latitude,
+                                           position.coords.longitude);
+
+          var infowindow = new google.maps.InfoWindow({
+            map: mapGeo,
+            position: pos,
+            content: 'Location found using HTML5.'
+          });
+
+          mapGeo.setCenter(pos);
+        }, function() {
+          handleNoGeolocation(true);
+        });
+      } else {
+        // Browser doesn't support Geolocation
+        handleNoGeolocation(false);
+      }
+    }
+
+    function handleNoGeolocation(errorFlag) {
+      if (errorFlag) {
+        var content = 'Error: The Geolocation service failed.';
+      } else {
+        var content = 'Error: Your browser doesn\'t support geolocation.';
+      }
+
+      var options = {
+        map: mapGeo,
+        position: new google.maps.LatLng(60, 105),
+        content: content
+      };
+
+      var infowindow = new google.maps.InfoWindow(options);
+      mapGeo.setCenter(options.position);
+    }
+
+    initialize();
+</script>

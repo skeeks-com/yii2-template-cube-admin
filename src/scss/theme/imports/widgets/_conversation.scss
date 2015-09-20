@@ -1,0 +1,87 @@
+/* CONVERSATION */
+.conversation-wrapper {
+	.conversation-inner {
+		padding: 0 0 5px 0;
+		margin-right: 10px;
+	}
+	.conversation-user {
+		width: 50px;
+		height: 50px;
+		overflow: hidden;
+		float: left;
+		@include border-radius(50%);
+		margin-top: 6px;
+	}
+	.conversation-item {
+		padding: 5px 0;
+		position: relative;
+	
+		&.item-right {
+			.conversation-body {
+				background: #dceffc;
+			
+				&:before {
+					border-color: transparent transparent transparent #dceffc;
+					left: auto;
+					right: -12px;
+				}
+			}
+			.conversation-user {
+				float: right;
+			}
+			.conversation-body {
+				margin-left: 0;
+				margin-right: 60px;
+			}
+		}
+	}
+	.conversation-body {
+		background: #f5f5f5;
+		font-size: 0.875em;
+		width: auto;
+		margin-left: 60px;
+		padding: 8px 10px;
+		position: relative;
+		@include border-radius($border-radius-base);
+	
+		&:before {
+			border-color: transparent #f5f5f5 transparent transparent;
+			border-style: solid;
+			border-width: 6px;
+			content: "";
+			cursor: pointer;
+			left: -12px;
+			position: absolute;
+			top: 25px;
+		}
+		> .name {
+			font-weight: 600;
+			font-size: 1.125em;
+		}
+		> .time {
+			position: absolute;
+			font-size: 0.875em;
+			right: 10px;
+			top: 0;
+			margin-top: 10px;
+			color: #605f5f;
+			font-weight: 300;
+		
+			&:before {
+				content: "\f017";
+				font-family: FontAwesome;
+				font-style: normal;
+				font-weight: normal;
+				text-decoration: inherit;
+				margin-top: 4px;
+				font-size: 0.875em;
+			}
+		}
+		> .text {
+			padding-top: 6px;
+		}
+	}
+	.conversation-new-message {
+		padding-top: 10px;
+	}
+}

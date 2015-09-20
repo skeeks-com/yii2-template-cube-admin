@@ -1,0 +1,85 @@
+a {
+	cursor: pointer;
+}
+
+@-webkit-keyframes fadeOutDown {
+  0% {
+	opacity: 1;
+  }
+
+  100% {
+	opacity: 0;
+	-webkit-transform: translate3d(0, 30px, 0);
+			transform: translate3d(0, 30px, 0);
+  }
+}
+
+@keyframes fadeOutDown {
+  0% {
+	opacity: 1;
+  }
+
+  100% {
+	opacity: 0;
+	-webkit-transform: translate3d(0, 30px, 0);
+			transform: translate3d(0, 30px, 0);
+  }
+}
+
+.fadeOutDown {
+  -webkit-animation-name: fadeOutDown;
+		  animation-name: fadeOutDown;
+}
+
+@-webkit-keyframes fadeInUp {
+  0% {
+	opacity: 0;
+	-webkit-transform: translate3d(0, 30px, 0);
+			transform: translate3d(0, 30px, 0);
+  }
+
+  100% {
+	opacity: 1;
+	-webkit-transform: none;
+			transform: none;
+  }
+}
+
+@keyframes fadeInUp {
+  0% {
+	opacity: 0;
+	-webkit-transform: translate3d(0, 30px, 0);
+			transform: translate3d(0, 30px, 0);
+  }
+
+  100% {
+	opacity: 1;
+	-webkit-transform: none;
+			transform: none;
+  }
+}
+
+.fadeInUp {
+  -webkit-animation-name: fadeInUp;
+		  animation-name: fadeInUp;
+}
+
+
+.slide-main-container {
+	position: relative;
+}
+.slide-main-animation.ng-enter {
+	-webkit-animation: fadeInUp 0.7s;
+	-moz-animation: fadeInUp 0.7s;
+	-ms-animation: fadeInUp 0.7s;
+	animation: fadeInUp 0.7s;
+}
+.slide-main-animation.ng-enter.ng-enter-active {
+
+}
+.slide-main-animation.ng-leave {
+	
+}
+.slide-main-animation.ng-leave.ng-leave-active {
+
+}

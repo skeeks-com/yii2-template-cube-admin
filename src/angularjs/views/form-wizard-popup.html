@@ -1,0 +1,338 @@
+<div class="row">
+	<div class="col-lg-12">
+		<ol class="breadcrumb">
+			<li><a href="">Home</a></li>
+			<li class="active"><span>Form wizard</span></li>
+		</ol>
+		
+		<h1>Form wizard</h1>
+	</div>
+</div>
+
+<div class="row">
+	<div class="col-lg-12">
+		<div class="main-box clearfix" style="min-height: 820px;">
+			<header class="main-box-header clearfix">
+				<h2>Click on the button bellow to open the wizard</h2>
+			</header>
+			
+			<div class="main-box-body clearfix">
+			
+				<button id="open-wizard" class="btn btn-primary">Open wizard</button>
+
+				<div class="wizard" id="wizard-demo">
+					<h1>Create Server</h1>
+		
+					<div class="wizard-card" data-onValidated="setServerName" data-cardname="name">
+						<h3><span>Name &amp; FQDN</span></h3>
+		
+						<div class="wizard-input-section">
+							<p>
+								To begin, please enter the IP of your server or the
+								fully-qualified name.
+							</p>
+		
+							<div class="form-group">
+								<label for="exampleInputEmail1">Email address</label>
+								<input type="text" class="form-control" id="new-server-fqdn" placeholder="FQDN or IP" data-validate="fqdn_or_ip"/>
+							</div>
+						</div>
+		
+						<div class="wizard-input-section">
+							<p>
+								Optionally, give this server a label.
+							</p>
+		
+							<div class="form-group">
+								<label for="exampleInputEmail1">Email address</label>
+								<input type="text" class="form-control" id="new-server-name" placeholder="Server name (optional)" data-validate=""/>
+							</div>
+						</div>
+					</div>
+		
+					<div class="wizard-card" data-cardname="group">
+						<h3><span>Server Group</span></h3>
+		
+						<div class="wizard-input-section">
+							<p>
+								Where would you like server <strong class="create-server-name"></strong>
+								to go?
+							</p>
+						</div>
+					</div>
+		
+					<div class="wizard-card" data-cardname="services">
+						<h3><span>Service Selection</span></h3>
+		
+						<div class="alert hide">
+							It's recommended that you select at least one
+							service, like ping.
+						</div>
+		
+						<div class="wizard-input-section">
+							<p>
+								Please choose the services you'd like Panopta to
+								monitor.  Any service you select will be given a default
+								check frequency of 1 minute.
+							</p>
+		
+							<div class="form-group">
+								<label for="exampleInputCountry">Country</label>
+								<input type="text" class="form-control" id="exampleInputCountry">
+							</div>
+						</div>
+					</div>
+		
+					<div class="wizard-card" data-onload="" data-cardname="location">
+						<h3><span>Monitoring Location</span></h3>
+		
+						<div class="wizard-input-section">
+							<p>
+								We determined <strong>Chicago</strong> to be
+								the closest location to monitor
+								<strong class="create-server-name"></strong>
+								If you would like to change this, or you think this is
+								incorrect, please select a different
+								monitoring location.
+							</p>
+		
+							<div class="form-group form-group-select2 col-md-6">
+								<label>Enhanced Select</label>
+								<select style="width:300px" id="sel2">
+									<option value="United States">United States</option> 
+									<option value="United Kingdom">United Kingdom</option> 
+									<option value="Afghanistan">Afghanistan</option> 
+									<option value="Albania">Albania</option> 
+									<option value="Algeria">Algeria</option> 
+									<option value="American Samoa">American Samoa</option> 
+									<option value="Andorra">Andorra</option> 
+									<option value="Angola">Angola</option> 
+									<option value="Anguilla">Anguilla</option> 
+									<option value="Antarctica">Antarctica</option> 
+									<option value="Antigua and Barbuda">Antigua and Barbuda</option> 
+									<option value="Argentina">Argentina</option> 
+									<option value="Armenia">Armenia</option> 
+									<option value="Aruba">Aruba</option> 
+									<option value="Australia">Australia</option> 
+									<option value="Austria">Austria</option> 
+									<option value="Azerbaijan">Azerbaijan</option> 
+									<option value="Slovakia">Slovakia</option> 
+								</select>
+							</div>
+						</div>
+					</div>
+		
+					<div class="wizard-card">
+						<h3><span>Notification Schedule</span></h3>
+		
+						<div class="wizard-input-section">
+							<p>
+								Select the notification schedule to be used for outages.
+							</p>
+		
+							<div class="form-group">
+								<input type="text" class="form-control" placeholder="Type schedule here">
+							</div>
+						</div>
+		
+						<div class="wizard-ns-detail hide">
+							Also using <strong>ALIS Production</strong>:
+		
+							<ul id="wizard-ns-detail-servers">
+								<li>Corporate sites</li>
+								<li>dt01.sat.medtelligent.com</li>
+								<li>alisonline.com</li>
+								<li>circa-db04.sat.medtelligent.com</li>
+								<li>circa-services01.sat.medtelligent.com</li>
+								<li>circa-web01.sat.medtelligent.com</li>
+								<li>heartbeat.alisonline.com</li>
+								<li>medtelligent.com</li>
+								<li>dt02.fre.medtelligent.com</li>
+								<li>dev03.lin.medtelligent.com</li>
+							</ul>
+				        </div>
+					</div>
+		
+		
+					<div class="wizard-card">
+						<h3><span>Agent Setup</span></h3>
+		
+						<div class="wizard-input-section">
+							<p>The Agent allows
+								you to monitor local resources (disk usage, cpu usage, etc).
+								If you would like to set that up now, please download
+								and follow the install instructions.
+							</p>
+						</div>
+		
+						<div class="wizard-input-section">
+							<p>You will be given a server key after you install the Agent
+								on <strong class="create-server-name"></strong>.
+								If you know your server key now, please enter it
+								below.</p>
+		
+							<div class="form-group">
+								<input type="text" class="form-control create-server-agent-key" data-validate="" placeholder="Server key (optional)">
+							</div>
+						</div>
+					</div>
+		
+					<div class="wizard-error">
+						<div class="alert alert-error">
+							<strong>There was a problem</strong> with your submission.
+							Please correct the errors and re-submit.
+						</div>
+					</div>
+		
+					<div class="wizard-failure">
+						<div class="alert alert-error">
+							<strong>There was a problem</strong> submitting the form.
+							Please try again in a minute.
+						</div>
+					</div>
+		
+					<div class="wizard-success">
+						<div class="alert alert-success">
+							<span class="create-server-name"></span>
+							was created <strong>successfully.</strong>
+						</div>
+		
+						<a class="btn btn-default create-another-server">Create another server</a>
+						<span style="padding:0 10px">or</span>
+						<a class="btn btn-primary im-done">Done</a>
+					</div>
+				</div>
+			</div>
+
+		</div>
+	</div>
+</div>
+	
+<!-- this page specific inline scripts -->
+<script type="text/javascript">
+function setServerName(card) {
+	var host = $("#new-server-fqdn").val();
+	var name = $("#new-server-name").val();
+	var displayName = host;
+
+	if (name) {
+		displayName = name + " ("+host+")";
+	};
+
+	card.wizard.setSubtitle(displayName);
+	card.wizard.el.find(".create-server-name").text(displayName);
+}
+
+function validateIP(ipaddr) {
+    //Remember, this function will validate only Class C IP.
+    //change to other IP Classes as you need
+    ipaddr = ipaddr.replace(/\s/g, "") //remove spaces for checking
+    var re = /^\d{1,3}\.\d{1,3}\.\d{1,3}\.\d{1,3}$/; //regex. check for digits and in
+                                          //all 4 quadrants of the IP
+    if (re.test(ipaddr)) {
+        //split into units with dots "."
+        var parts = ipaddr.split(".");
+        //if the first unit/quadrant of the IP is zero
+        if (parseInt(parseFloat(parts[0])) == 0) {
+            return false;
+        }
+        //if the fourth unit/quadrant of the IP is zero
+        if (parseInt(parseFloat(parts[3])) == 0) {
+            return false;
+        }
+        //if any part is greater than 255
+        for (var i=0; i<parts.length; i++) {
+            if (parseInt(parseFloat(parts[i])) > 255){
+                return false;
+            }
+        }
+        return true;
+    }
+    else {
+        return false;
+    }
+}
+
+function validateFQDN(val) {
+	return /^[a-z0-9-_]+(\.[a-z0-9-_]+)*\.([a-z]{2,4})$/.test(val);
+}
+
+function fqdn_or_ip(el) {
+	var val = el.val();
+	ret = {
+		status: true
+	};
+	if (!validateFQDN(val)) {
+		if (!validateIP(val)) {
+			ret.status = false;
+			ret.msg = "Invalid IP address or FQDN";
+		}
+	}
+	return ret;
+}
+
+
+$(function() {
+	
+	$('#sel2').select2();
+
+	$.fn.wizard.logging = false;
+
+	var wizard = $("#wizard-demo").wizard({
+		showCancel: true
+	});
+
+	//$(".chzn-select").chosen();
+
+	wizard.el.find(".wizard-ns-select").change(function() {
+		wizard.el.find(".wizard-ns-detail").show();
+	});
+
+	wizard.el.find(".create-server-service-list").change(function() {
+		var noOption = $(this).find("option:selected").length == 0;
+		wizard.getCard(this).toggleAlert(null, noOption);
+	});
+
+	wizard.cards["name"].on("validated", function(card) {
+		var hostname = card.el.find("#new-server-fqdn").val();
+	});
+
+	wizard.on("submit", function(wizard) {
+		var submit = {
+			"hostname": $("#new-server-fqdn").val()
+		};
+
+		setTimeout(function() {
+			wizard.trigger("success");
+			wizard.hideButtons();
+			wizard._submitting = false;
+			wizard.showSubmitCard("success");
+			wizard.updateProgressBar(0);
+		}, 2000);
+	});
+
+	wizard.on("reset", function(wizard) {
+		wizard.setSubtitle("");
+		wizard.el.find("#new-server-fqdn").val("");
+		wizard.el.find("#new-server-name").val("");
+	});
+
+	wizard.el.find(".wizard-success .im-done").click(function() {
+		wizard.reset().close();
+	});
+
+	wizard.el.find(".wizard-success .create-another-server").click(function() {
+		wizard.reset();
+	});
+
+	$(".wizard-group-list").click(function() {
+		alert("Disabled for demo.");
+	});
+
+	$("#open-wizard").click(function() {
+		wizard.show();
+	});
+
+	wizard.show();
+});
+</script>

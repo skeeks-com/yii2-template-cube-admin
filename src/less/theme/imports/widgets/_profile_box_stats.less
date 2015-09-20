@@ -1,0 +1,66 @@
+.profile-box-stats {
+	.main-box-body {
+		padding: 0;
+	}
+	.profile-box-header {
+		.border-radius(@border-radius-base @border-radius-base 0 0);
+		padding: 30px 20px 70px;
+		color: #fff;
+		text-align: center;
+		position: relative;
+		background-repeat: no-repeat;
+		background-size: cover;
+	}
+	.profile-img {
+		.border-radius(18%);
+		border: 5px solid #fff;
+		bottom: -45px;
+		float: left;
+		height: 90px;
+		left: 50%;
+		margin-left: -45px;
+		position: absolute;
+		width: 90px;
+	}
+	h2 {
+		padding: 0 0 8px;
+		margin: 0;
+		display: inline-block;
+		font-weight: 600;
+		line-height: 1.1;
+		font-size: 1.5em;
+	}
+	.job-position {
+		font-weight: 600;
+		font-size: 0.875em;
+	}
+	.profile-box-footer {
+		padding-top: 50px;
+		padding-bottom: 15px;
+	
+		a {
+			display: block;
+			width: 33%;
+			width: 33.33%;
+			float: left;
+			text-align: center;
+			padding: 15px 10px;
+			color: @text-color;
+		
+			&:hover {
+				text-decoration: none;
+			}
+		}
+		.value {
+			display: block;
+			font-size: 1.8em;
+			font-weight: 300;
+		}
+		.label {
+			display: block;
+			font-size: 1em;
+			font-weight: 300;
+			color: @text-color;
+		}
+	}
+}

@@ -1,0 +1,136 @@
+<style>
+.show-grid {
+	padding-left: 10px;
+	padding-right: 10px;
+}
+.show-grid [class^="col-"] {
+	padding-top: 10px;
+	padding-bottom: 10px;
+	background-color: #eee;
+	border: 1px solid #ddd;
+	background-color: rgba(52, 152, 219, 0.15);
+	border: 1px solid rgba(52, 152, 219, 0.2);
+	margin-bottom: 5px;
+}
+</style>
+
+<div class="row">
+	<div class="col-lg-12">
+		<ol class="breadcrumb">
+			<li><a href="">Home</a></li>
+			<li class="active"><span>Grid</span></li>
+		</ol>
+		
+		<h1>Grid</h1>
+	</div>
+</div>
+
+<div class="row">
+	<div class="col-lg-12">
+		<div class="main-box show-grid clearfix">
+			<div class="main-box-body clearfix">
+				<br/>
+				<h4>Stacked-to-horizontal</h4>
+				<div class="row">
+					<div class="col-md-2">.col-md-2</div>
+					<div class="col-md-2">.col-md-2</div>
+					<div class="col-md-2">.col-md-2</div>
+					<div class="col-md-2">.col-md-2</div>
+					<div class="col-md-2">.col-md-2</div>
+					<div class="col-md-2">.col-md-2</div>
+				</div>
+				<div class="row">
+					<div class="col-md-8">.col-md-8</div>
+					<div class="col-md-4">.col-md-4</div>
+				</div>
+				<div class="row">
+					<div class="col-md-4">.col-md-4</div>
+					<div class="col-md-4">.col-md-4</div>
+					<div class="col-md-4">.col-md-4</div>
+				</div>
+				<div class="row">
+					<div class="col-md-6">.col-md-6</div>
+					<div class="col-md-6">.col-md-6</div>
+				</div>
+				<br/>
+				<h4>Mobile and desktop</h4>
+				<!-- Stack the columns on mobile by making one full-width and the other half-width -->
+				<div class="row">
+					<div class="col-xs-12 col-md-8">.col-xs-12 col-md-8</div>
+					<div class="col-xs-6 col-md-4">.col-xs-6 .col-md-4</div>
+				</div>
+				
+				<!-- Columns start at 50% wide on mobile and bump up to 33.3% wide on desktop -->
+				<div class="row">
+					<div class="col-xs-6 col-md-4">.col-xs-6 .col-md-4</div>
+					<div class="col-xs-6 col-md-4">.col-xs-6 .col-md-4</div>
+					<div class="col-xs-6 col-md-4">.col-xs-6 .col-md-4</div>
+				</div>
+				
+				<!-- Columns are always 50% wide, on mobile and desktop -->
+				<div class="row">
+					<div class="col-xs-6">.col-xs-6</div>
+					<div class="col-xs-6">.col-xs-6</div>
+				</div>
+				<br/>
+				<h4>Mobile, tablet, desktops</h4>
+				<div class="row">
+					<div class="col-xs-12 col-sm-6 col-md-8">.col-xs-12 .col-sm-6 .col-md-8</div>
+					<div class="col-xs-6 col-sm-6 col-md-4">.col-xs-6 .col-sm-6 .col-md-4</div>
+				</div>
+				<div class="row">
+					<div class="col-xs-6 col-sm-4 col-md-4">.col-xs-6 .col-sm-4 .col-md-4</div>
+					<div class="col-xs-6 col-sm-4 col-md-4">.col-xs-6 .col-sm-4 .col-md-4</div>
+					<!-- Optional: clear the XS cols if their content doesn't match in height -->
+					<div class="clearfix visible-xs"></div>
+					<div class="col-xs-6 col-sm-4 col-md-4">.col-xs-6 .col-sm-4 .col-md-4</div>
+				</div>
+				<br/>
+				<h4>Responsive column resets</h4>
+				<div class="row">
+					<div class="col-xs-6 col-sm-3">.col-xs-6 .col-sm-3</div>
+					<div class="col-xs-6 col-sm-3">.col-xs-6 .col-sm-3</div>
+				
+					<!-- Add the extra clearfix for only the required viewport -->
+					<div class="clearfix visible-xs"></div>
+				
+					<div class="col-xs-6 col-sm-3">.col-xs-6 .col-sm-3</div>
+					<div class="col-xs-6 col-sm-3">.col-xs-6 .col-sm-3</div>
+				</div>
+				<br/>
+				<h4>Offsetting columns</h4>
+				<div class="row">
+					<div class="col-sm-5 col-md-6">.col-sm-5 .col-md-6</div>
+					<div class="col-sm-5 col-sm-offset-2 col-md-6 col-md-offset-0">.col-sm-5 .col-sm-offset-2 .col-md-6 .col-md-offset-0</div>
+				</div>
+				
+				<div class="row">
+					<div class="col-sm-6 col-md-5 col-lg-6">.col-sm-6 .col-md-5 .col-lg-6</div>
+					<div class="col-sm-6 col-md-5 col-md-offset-2 col-lg-6 col-lg-offset-0">.col-sm-6 .col-md-5 .col-md-offset-2 .col-lg-6 .col-lg-offset-0</div>
+				</div>
+				<br/>
+				<h4>Nesting columns</h4>
+				<div class="row">
+					<div class="col-md-9">
+						Level 1: .col-md-9
+						<div class="row">
+							<div class="col-md-6">
+								Level 2: .col-md-6
+							</div>
+							<div class="col-md-6">
+								Level 2: .col-md-6
+							</div>
+						</div>
+					</div>
+				</div>
+				<br/>
+				<h4>Column ordering</h4>
+				<div class="row">
+					<div class="col-md-9 col-md-push-3">.col-md-9 .col-md-push-3</div>
+					<div class="col-md-3 col-md-pull-9">.col-md-3 .col-md-pull-9</div>
+				</div>
+				
+			</div>
+		</div>
+	</div>
+</div>

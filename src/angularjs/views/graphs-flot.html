@@ -1,0 +1,591 @@
+<div class="row">
+	<div class="col-lg-12">
+		<ol class="breadcrumb">
+			<li><a href="">Home</a></li>
+			<li><a href=""><span>Graphs</span></a></li>
+			<li class="active"><span>Flot Charts</span></li>
+		</ol>
+		
+		<h1>Flot Charts</h1>
+	</div>
+</div>
+
+<div class="row">
+	<div class="col-lg-12">
+		<div class="main-box">
+			<header class="main-box-header clearfix">
+				<h2>Flot Bar chart</h2>
+			</header>
+			
+			<div class="main-box-body clearfix">
+				<div id="graph-bar-example" style="height: 300px; padding: 0px; position: relative;"></div>
+			</div>
+		</div>
+	</div>
+</div>
+
+<div class="row">
+	<div class="col-lg-12">
+		<div class="main-box">
+			<header class="main-box-header clearfix">
+				<h2>Flot Line chart</h2>
+			</header>
+			
+			<div class="main-box-body clearfix">
+				<div id="graph-flot-sin" style="height: 300px; padding: 0px; position: relative;"></div>
+			</div>
+		</div>
+	</div>
+</div>
+
+<div class="row">
+	<div class="col-lg-6">
+		<div class="main-box">
+			<header class="main-box-header clearfix">
+				<h2 class="pull-left">Stack charts</h2>
+				
+				<div class="icon-box pull-right">
+					<p class="stackControls">
+						<button class="btn">With stacking</button>
+						<button class="btn">Without stacking</button>
+					</p>
+					<p class="graphControls">
+						<button class="btn">Bars</button>
+						<button class="btn">Lines</button>
+						<button class="btn">Lines with steps</button>
+					</p>
+				</div>
+			</header>
+			
+			<div class="main-box-body clearfix">
+				<div id="graph-flot-stacking" style="height: 400px; padding: 0px; position: relative;"></div>
+			</div>
+		</div>
+	</div>
+	<div class="col-lg-6">
+		<div class="main-box">
+			<header class="main-box-header clearfix">
+				<h2>Horizontal bar charts</h2>
+			</header>
+			
+			<div class="main-box-body clearfix">
+				<div id="graph-flot-bar-horizontal" style="height: 435px; padding: 0px; position: relative;"></div>
+			</div>
+		</div>
+	</div>
+</div>
+
+<div class="row">
+	<div class="col-lg-12">
+		<div class="main-box">
+			<header class="main-box-header clearfix">
+				<h2>Realtime example</h2>
+			</header>
+			
+			<div class="main-box-body clearfix">
+				<div id="graph-flot-realtime" style="height: 400px; padding: 0px; position: relative;"></div>
+				
+				<br/>
+				<p>
+					You can update a chart periodically to get a real-time effect by using a timer to insert the new 
+					data in the plot and redraw it.
+				</p>
+
+				<p>
+					Time between updates: 
+					<input id="updateInterval" class="form-control inline" type="text" value="" style="text-align: right; width:5em; display: inline-block;"> 
+					milliseconds
+				</p>
+			</div>
+		</div>
+	</div>
+</div>
+
+<div class="row">
+	<div class="col-lg-6">
+		<div class="main-box">
+			<header class="main-box-header clearfix">
+				<h2>Facebook fans</h2>
+			</header>
+			
+			<div class="main-box-body clearfix">
+				<div id="graph-flot-points" style="height: 400px; padding: 0px; position: relative;"></div>
+			</div>
+		</div>
+	</div>
+	<div class="col-lg-6">
+		<div class="main-box">
+			<header class="main-box-header clearfix">
+				<h2>Pie chart</h2>
+			</header>
+			
+			<div class="main-box-body clearfix">
+				<div id="graph-flot-donut" style="height: 400px; padding: 0px; position: relative;"></div>
+			</div>
+		</div>
+	</div>
+</div>
+	
+<!-- this page specific inline scripts -->
+<script>
+$(function() {
+	
+	// bar chart
+	if ($('#graph-bar-example').length) {
+		var db1 = [];
+		for (var i = 0; i <= 10; i += 1) {
+			db1.push([i, parseInt(Math.random() * 30)]);
+		}
+
+		var db2 = [];
+		for (var i = 0; i <= 10; i += 1) {
+			db2.push([i, parseInt(Math.random() * 30)]);
+		}
+
+		var db3 = [];
+		for (var i = 0; i <= 10; i += 1) {
+			db3.push([i, parseInt(Math.random() * 30)]);
+		}
+		
+		var series = new Array();
+
+		series.push({
+			data : db1,
+			bars : {
+				show : true,
+				barWidth : 0.2,
+				order : 1,
+				lineWidth: 1,
+				fill: 1
+			}
+		});
+		series.push({
+			data : db2,
+			bars : {
+				show : true,
+				barWidth : 0.2,
+				order : 2,
+				lineWidth: 1,
+				fill: 1
+			}
+		});
+		series.push({
+			data : db3,
+			bars : {
+				show : true,
+				barWidth : 0.2,
+				order : 3,
+				lineWidth: 1,
+				fill: 1
+			}
+		}); 
+
+		$.plot("#graph-bar-example", series, {
+			colors: ['#e84e40', '#ffc107', '#8bc34a', '#03a9f4', '#9c27b0', '#90a4ae'],
+			grid: {
+				tickColor: "#ddd",
+				borderWidth: 0
+			},
+			shadowSize: 0
+		});
+	}
+	
+	// bar chart - horizontal
+	if ($('#graph-flot-bar-horizontal').length) {
+		var db1 = [];
+		for (var i = 0; i <= 4; i += 1) {
+			db1.push([parseInt(Math.random() * 30), i]);
+		}
+
+		var db2 = [];
+		for (var i = 0; i <= 4; i += 1) {
+			db2.push([parseInt(Math.random() * 30), i]);
+		}
+
+		var db3 = [];
+		for (var i = 0; i <= 4; i += 1) {
+			db3.push([parseInt(Math.random() * 30), i]);
+		}
+		
+		var series = new Array();
+
+		series.push({
+			data : db1,
+			bars : {
+				show : true,
+				barWidth : 0.2,
+				order : 1,
+				lineWidth: 1,
+				horizontal: true,
+				fill: 1
+			}
+		});
+		series.push({
+			data : db2,
+			bars : {
+				show : true,
+				barWidth : 0.2,
+				order : 2,
+				lineWidth: 1,
+				horizontal: true,
+				fill: 1
+			}
+		});
+		series.push({
+			data : db3,
+			bars : {
+				show : true,
+				barWidth : 0.2,
+				order : 3,
+				lineWidth: 1,
+				horizontal: true,
+				fill: 1
+			}
+		}); 
+
+		$.plot("#graph-flot-bar-horizontal", series, {
+			colors: ['#e84e40', '#ffc107', '#8bc34a', '#03a9f4', '#9c27b0', '#90a4ae'],
+			grid: {
+				tickColor: "#ddd",
+				borderWidth: 0
+			},
+			shadowSize: 0
+		});
+	}
+	
+	// graph with points - sin/cos example
+	if ($('#graph-flot-sin').length) {
+		var sin = [],
+			cos = [];
+
+		for (var i = 0; i < 14; i += 0.5) {
+			sin.push([i, Math.sin(i)]);
+			cos.push([i, Math.cos(i)]);
+		}
+
+		var plot = $.plot("#graph-flot-sin", [
+			{ data: sin, label: "sin(x)"},
+			{ data: cos, label: "cos(x)"}
+		], {
+			series: {
+				lines: {
+					show: true,
+					lineWidth: 2
+				},
+				points: {
+					show: true
+				}
+			},
+			grid: {
+				hoverable: true,
+				clickable: true,
+				tickColor: "#ddd",
+				borderWidth: 0
+			},
+			yaxis: {
+				min: -1.2,
+				max: 1.2
+			},
+			colors: ['#e84e40', '#8bc34a', '#ffc107', '#03a9f4', '#9c27b0', '#90a4ae'],
+			shadowSize: 0
+		});
+
+		function showTooltip(x, y, contents) {
+			$("<div id='tooltip'>" + contents + "</div>").css({
+				position: "absolute",
+				display: "none",
+				top: y + 5,
+				left: x + 5,
+				border: "1px solid #fdd",
+				padding: "2px",
+				"background-color": "#fee",
+				opacity: 0.80
+			}).appendTo("body").fadeIn(200);
+		}
+
+		var previousPoint = null;
+		$("#graph-flot-sin").bind("plothover", function (event, pos, item) {
+
+			if ($("#enablePosition:checked").length > 0) {
+				var str = "(" + pos.x.toFixed(2) + ", " + pos.y.toFixed(2) + ")";
+				$("#hoverdata").text(str);
+			}
+
+			if ($("#enableTooltip:checked").length > 0) {
+				if (item) {
+					if (previousPoint != item.dataIndex) {
+
+						previousPoint = item.dataIndex;
+
+						$("#tooltip").remove();
+						var x = item.datapoint[0].toFixed(2),
+						y = item.datapoint[1].toFixed(2);
+
+						showTooltip(item.pageX, item.pageY,
+						    item.series.label + " of " + x + " = " + y);
+					}
+				} else {
+					$("#tooltip").remove();
+					previousPoint = null;            
+				}
+			}
+		});
+
+		$("#graph-flot-sin").bind("plotclick", function (event, pos, item) {
+			if (item) {
+				$("#clickdata").text(" - click point " + item.dataIndex + " in " + item.series.label);
+				plot.highlight(item.series, item.datapoint);
+			}
+		});
+	}
+
+	// stack graph
+	if ($('#graph-flot-stacking').length) {
+		var d1 = [];
+		for (var i = 0; i <= 10; i += 1) {
+			d1.push([i, parseInt(Math.random() * 30)]);
+		}
+
+		var d2 = [];
+		for (var i = 0; i <= 10; i += 1) {
+			d2.push([i, parseInt(Math.random() * 30)]);
+		}
+
+		var d3 = [];
+		for (var i = 0; i <= 10; i += 1) {
+			d3.push([i, parseInt(Math.random() * 30)]);
+		}
+
+		var stack = 0,
+			bars = true,
+			lines = false,
+			steps = false;
+
+		function plotWithOptions() {
+			$.plot("#graph-flot-stacking", [ d1, d2, d3 ], {
+				series: {
+					stack: stack,
+					lines: {
+						show: lines,
+						fill: true,
+						steps: steps,
+						lineWidth: 1,
+						fill: 1
+					},
+					bars: {
+						show: bars,
+						barWidth: 0.3,
+						lineWidth: 1,
+						fill: 1
+					}
+				},
+				colors: ['#e84e40', '#ffc107', '#8bc34a', '#03a9f4', '#9c27b0', '#90a4ae'],
+				grid: {
+					tickColor: "#ddd",
+					borderWidth: 0
+				},
+				shadowSize: 0
+			});
+		}
+
+		plotWithOptions();
+
+		$(".stackControls button").click(function (e) {
+			e.preventDefault();
+			stack = $(this).text() == "With stacking" ? true : null;
+			plotWithOptions();
+		});
+
+		$(".graphControls button").click(function (e) {
+			e.preventDefault();
+			bars = $(this).text().indexOf("Bars") != -1;
+			lines = $(this).text().indexOf("Lines") != -1;
+			steps = $(this).text().indexOf("steps") != -1;
+			plotWithOptions();
+		});
+	}
+
+	// donut chart
+	if ($('#graph-flot-donut').length) {
+		var dataDonut = [
+			{ label: "Series1",  data: 10},
+			{ label: "Series2",  data: 30},
+			{ label: "Series3",  data: 90},
+			{ label: "Series4",  data: 70},
+			{ label: "Series5",  data: 80},
+			{ label: "Series6",  data: 110}
+		];
+		
+		$.plot('#graph-flot-donut', dataDonut, {
+		    series: {
+		        pie: {
+		            show: true,
+		            innerRadius: 0.5,
+		            label: {
+		                show: true,
+		            }
+		        }
+		    },
+			colors: ['#e84e40', '#ffc107', '#8bc34a', '#03a9f4', '#9c27b0', '#90a4ae'],
+		    legend: {
+		        show: false,
+		    }
+		});
+	}
+
+	// graph with points
+	if ($('#graph-flot-points').length) {
+		var likes = [[1, 5], [2, 10], [3, 15], [4, 20],[5, 25],[6, 30],[7, 35],[8, 40],[9, 45],[10, 50],[11, 55],[12, 60],[13, 65],[14, 70],[15, 75],[16, 80],[17, 85],[18, 90],[19, 85],[20, 80],[21, 75],[22, 80],[23, 75],[24, 70],[25, 65],[26, 75],[27,80],[28, 85],[29, 90], [30, 95]];
+
+		var plot = $.plot($("#graph-flot-points"),
+			   [ { data: likes, label: "Fans"} ], {
+				   series: {
+					   lines: { 
+						   show: true,
+							lineWidth: 2,
+							fill: true, 
+							fillColor: { colors: [ { opacity: 0.3 }, { opacity: 0.3 } ] }
+					 	},
+					   points: { show: true, 
+								 lineWidth: 2 
+							 },
+					   shadowSize: 0
+				   },
+				   grid: { hoverable: true, 
+						   clickable: true, 
+						   tickColor: "#f9f9f9",
+						   borderWidth: 0
+						 },
+				   colors: ["#03a9f4"],
+					xaxis: {ticks:6, tickDecimals: 0},
+					yaxis: {ticks:3, tickDecimals: 0},
+				 });
+
+		function showTooltip(x, y, contents) {
+			$('<div id="tooltip">' + contents + '</div>').css( {
+				position: 'absolute',
+				display: 'none',
+				top: y + 5,
+				left: x + 5,
+				border: '1px solid #fdd',
+				padding: '2px',
+				'background-color': '#dfeffc',
+				opacity: 0.80
+			}).appendTo("body").fadeIn(200);
+		}
+
+		var previousPoint = null;
+		$("#graph-flot-points").bind("plothover", function (event, pos, item) {
+			$("#x").text(pos.x.toFixed(2));
+			$("#y").text(pos.y.toFixed(2));
+
+				if (item) {
+					if (previousPoint != item.dataIndex) {
+						previousPoint = item.dataIndex;
+
+						$("#tooltip").remove();
+						var x = item.datapoint[0].toFixed(2),
+							y = item.datapoint[1].toFixed(2);
+
+						showTooltip(item.pageX, item.pageY,
+									item.series.label + " of " + x + " = " + y);
+					}
+				}
+				else {
+					$("#tooltip").remove();
+					previousPoint = null;
+				}
+		});
+	}
+
+	// graph real time
+	if ($('#graph-flot-realtime').length) {
+	
+		var data = [],
+			totalPoints = 300;
+
+		function getRandomData() {
+
+			if (data.length > 0)
+				data = data.slice(1);
+
+			// Do a random walk
+
+			while (data.length < totalPoints) {
+
+				var prev = data.length > 0 ? data[data.length - 1] : 50,
+					y = prev + Math.random() * 10 - 5;
+
+				if (y < 0) {
+					y = 0;
+				} else if (y > 100) {
+					y = 100;
+				}
+
+				data.push(y);
+			}
+
+			// Zip the generated y values with the x values
+
+			var res = [];
+			for (var i = 0; i < data.length; ++i) {
+				res.push([i, data[i]])
+			}
+
+			return res;
+		}
+
+		// Set up the control widget
+
+		var updateInterval = 30;
+		$("#updateInterval").val(updateInterval).change(function () {
+			var v = $(this).val();
+			if (v && !isNaN(+v)) {
+				updateInterval = +v;
+				if (updateInterval < 1) {
+					updateInterval = 1;
+				} else if (updateInterval > 2000) {
+					updateInterval = 2000;
+				}
+				$(this).val("" + updateInterval);
+			}
+		});
+
+		var plot = $.plot("#graph-flot-realtime", [ getRandomData() ], {
+			series: {
+				lines: { 
+					show: true,
+					lineWidth: 2,
+					fill: true, 
+					fillColor: { colors: [ { opacity: 0.3 }, { opacity: 0.3 } ] }
+				},
+				shadowSize: 0	// Drawing is faster without shadows
+			},
+			colors: ["#e84e40"],
+			yaxis: {
+				min: 0,
+				max: 100
+			},
+			xaxis: {
+				show: false
+			}
+		});
+
+		function update() {
+
+			plot.setData([getRandomData()]);
+
+			// Since the axes don't change, we don't need to call plot.setupGrid()
+
+			plot.draw();
+			setTimeout(update, updateInterval);
+		}
+
+		update();
+	}
+});
+
+function labelFormatter(label, series) {
+	return "<div style='font-size:8pt; text-align:center; padding:2px; color:white;'>" + label + "<br/>" + Math.round(series.percent) + "%</div>";
+}
+</script>
